@@ -1,0 +1,90 @@
+﻿.destination-schedule {
+    background-color: aquamarine;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+
+.section {
+    background-color: #fff;
+    outline: none;
+}
+
+.list-item-column-container {
+    --column: 5;
+    --min-width: 200px;
+    display: grid;
+    grid-template-columns: repeat(var(--column),minmax(var(--min-width),1fr));
+    grid-column-gap: 10px;
+    -webkit-column-gap: 10px;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+    height: 75vh;
+    max-width: 1200px;
+    overflow-y: auto;
+}
+.list-item-column {
+    margin-bottom: 12px;
+}
+.list-item-header {
+    color: #1a699d;
+}
+.list-item {
+    border: none;
+}
+
+    .list-item > div.subtitle-title {
+        margin: 7px 0;
+    }
+        .list-item > div.subtitle-title p.subtitle {
+            font-weight: 400;
+        }
+
+        .list-item > div.subtitle-title * {
+            text-align: left;
+        }
+
+.seats {
+    /*background: black;*/
+    background: rgb(50, 170, 153);
+    /* color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px; */
+    /* margin: 5px; */
+    width: 80px; /*modified by kim*/
+    color: white;
+    border-radius: 20%;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-transition-duration: inherit;
+    transition-duration: inherit;
+}
+
+.f1-steps {
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+}
+.f1-progress {
+    position: absolute;
+    top: 24px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+}
+
+
+.td-ellipsis {
+    max-width: 600px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

@@ -1,42 +1,612 @@
 ﻿<!DOCTYPE html>
+
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Content/css/Main.css" rel="stylesheet" />
+    <link href="~/Content/css/Main2.css" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/media.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/packageLayout.css")" rel="stylesheet" />
+    @*<link href="@Url.Content("~/Content/font-awesome-4.7.0/css/font-awesome.css")" rel="stylesheet" />*@
+    <link href="@Url.Content("~/Content/fontawesome-5.10.0/css/all.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/sweetalert2.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/bootstrap4-toggle.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/dropzone.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/daterangepicker.css")" rel="stylesheet" />
+    @*<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />*@
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    @RenderSection("style", required: false)
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+<body id="body-div">
+
+
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white nav-shadow ">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+                <img src="@Url.Content("~/Content/Image/Logo-orange.png")" height="65" alt="CoolBrand">
+
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a href="@Url.Action("Inquiry", "Merchant")" class="nav-item nav-link">Be a merchant</a>
+                    </li>
+                    @{
+                        var x = Session["UserID"];
+                        if (Session["UserID"] == null)
+                        {
+                            <li class="nav-item">
+                                <a href="#" data-toggle="modal" data-target="#modalLogin" class="nav-item nav-link"><i class="fas fa-user-circle"></i> Sign In</a>
+                            </li>
+
+                        }
+                        else
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img class="img-div mr-2 img-responsive" style="width:  30px;    margin-top: -5px; height:30px" alt="Image" src="@(Session["Image"])" /> @Session["Firstname"]
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item mb-2" href="@Url.Action("Profile", "User")"><i class="fas fa-user-circle text-orange mr-3"></i> Profile</a>
+                                    <a class="dropdown-item mb-2" href="@Url.Action("Index", "TransactionHistory")"><i class="fa fa-list text-orange mr-3"></i>Transaction History</a>
+                                    <hr />
+                                    <a class="dropdown-item mb-2" href="@Url.Action("Logout", "Site")"><i class="fas fa-sign-out-alt text-orange mr-3"></i>Sign Out</a>
+                                </div>
+                            </li>
+                        }
+                    }
+
                 </ul>
+            </div>
+
+        </div>
+    </nav>
+    <div id="data-preloader" style="display: none;">
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
         </div>
     </div>
-    <div class="container body-content">
+
+    <div class="body-content">
+
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
+        <!-- Footer -->
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <div class="modal fade" id="modalLogin">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                @*<div class="modal-header">
+                        <h4 class="modal-title">Modal Heading</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>*@
+
+                <!-- Modal body -->
+                <div class="modal-body pt-0 pb-0">
+                    <div class="row">
+                        <div id="login-img" class="col-md-5 col-sm-12" style="background-image: url('/Content/Image/login-bg.png');">
+                            <br />
+                            <div id="logo-mini" class="row mb-3 align-items-center">
+                                <img src="@Url.Content("~/Content/Image/jt-logo-white.png")" class="img-responsive" />
+
+                            </div>
+                            <div id="inquiry-text" class="col-md-12 text-center login-txt">
+                                <h3 class="">
+                                    Why Choose Juantraveller?
+                                </h3>
+                                <div class="row text-center">
+                                    <div class="col-md-10" style="margin:0 auto;">
+                                        If you have any question about Juantraveller, or simply seek advice and support, we are
+                                        here to assist you, Simply fill out the form below, and a Juantraveller representative
+                                        will contact you.
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row mb-4 text-center" style="bottom:0; padding-top: 250px;">
+                                <div class="col-md-8" style="margin:0 auto;">
+                                    <button type="button" id="a-btnSignUp" class="btn btn-transparent btn-block">Sign Up</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-7 p-5">
+                            <br />
+                            <div class="row  text-center">
+                                <div class="col-md-12">
+                                    <span class="m-title">Sign in to Juantraveller</span>
+                                </div>
+                                <div class="col-md-12">
+                                    <span class="sub-title">Sign in to Juantraveller let us be part of your journey!</span>
+                                </div>
+                            </div>
+                            <br /><br />
+                            <div class="row ">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Email</label>
+                                        <input type="text" class="form-control" maxlength="50" id="txtEmail" name="txtEmail" placeholder="Email" required>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Password</label>
+                                        <input type="password" class="form-control" maxlength="20" id="txtPassword" name="txtPassword" placeholder="Password" required>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            @*<input class="form-check-input" type="checkbox" id="gridCheck">
+                                                <label class="form-check-label" for="gridCheck">
+                                                    Remember me
+                                                </label>*@
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="form-check">
+
+                                            <label class="form-check-label">
+                                                <a href="#" id="a-forgotPassword" class="text-orange"> Forgot Password</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    @*<button type="button" id="btnSignIn" class="btn btn-orange btn-lg btn-block">Sign In</button>*@
+                                    <button id="btnSignIn" class="btn btn-orange btn-lg btn-block">Sign In</button>
+                                </div>
+                                <div class="pt-2 col-md-12">
+                                    <button id="fbLogIn" class="btn btn-block btn-primary">Log In with Facebook</button>
+                                </div>
+                            </div>
+
+                            @*<div class="row mb-4 text-center">
+                                    <div class="col-12">
+                                        <span>Or Sign in with</span>
+                                    </div>
+
+                                </div>
+                                <div class="row ">
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-lg btn-fb btn-block"><i class="fab fa-facebook-f"></i> Facebook</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-lg btn-google btn-block"><i class="fab fa-google"></i> Google</button>
+                                    </div>
+                                </div>*@
+                        </div>
+                        @*<div class="wrap-login100">
+
+
+                                <div class="login100-more" style="background-image: url('images/bg-01.jpg');"></div>
+                            </div>*@
+
+                    </div>
+
+                </div>
+
+                <!-- Modal footer -->
+                @*<div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>*@
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal fade" id="modalForgotPassword">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+
+                <div class="modal-body pt-0 pb-0">
+                    <div class="row">
+                        <div id="login-img" class="col-md-5 col-sm-12" style="background-image: url('/Content/Image/login-bg.png');">
+                            <br />
+                            <div id="logo-mini" class="row mb-3 align-items-center">
+                                <img src="@Url.Content("~/Content/Image/jt-logo-white.png")" class="img-responsive" />
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-7 p-5">
+                            <br />
+                            <div class="row mb-3 text-center">
+                                <div class="col-md-12">
+                                    <span class="m-title">Forgot Password?</span>
+                                </div>
+                                <div class="col-md-12">
+                                    <span>Don't worry, simply enter your email address and we'll send you a link to set up your new password in no time!</span>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Email</label>
+                                        <input type="text" class="form-control" id="txtEmailForgotPassword" name="txtEmailForgotPassword" placeholder="Email" required>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    <button type="button" id="btnResetPassword" class="btn btn-orange btn-lg btn-block">Reset Password</button>
+                                </div>
+
+                            </div>
+
+                            <div class="row mb-4 text-center">
+                                <div class="col-12">
+                                    <span>Question? Email us at <a href="#" class="text-orange">info@juantraveller.com</a> </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalSignup">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+
+                <!-- Modal body -->
+                <div class="modal-body pt-0 pb-0">
+
+
+
+                    <div class="row">
+                        <div class="col-md-7 p-5">
+                            <form id="signUpForm" action="" name="signUpForm" class="col-12" method="post">
+                                <br />
+                                <div class="row  text-center">
+                                    <div class="col-md-12">
+                                        <span class="m-title">Create Account</span>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <span class="sub-title">Start planning your next adventure with us!</span>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row ">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label">First Name</label>
+                                            <input type="text" class="form-control" maxlength="25" id="txtSignUpFirstName" name="txtSignUpFirstName" placeholder="First Name" required>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row ">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Last Name</label>
+                                            <input type="text" class="form-control" maxlength="25" id="txtSignUpLastName" name="txtSignUpLastName" placeholder="Last Name" required>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row ">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Email Address</label>
+                                            <input type="text" class="form-control" maxlength="55" id="txtSignUpEmail" name="txtSignUpEmail" placeholder="Email Address" required>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row ">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Password</label>
+                                            <input type="password" class="form-control" maxlength="25" id="txtSignUpPassword" name="txtSignUpPassword" placeholder="Password" required>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row ">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label class="form-label">Confirm Password</label>
+                                            <input type="password" class="form-control" maxlength="25" id="txtSignUpConfirmPass" name="txtSignUpConfirmPass" placeholder="Confirm Password" required>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <button type="submit" id="btnSignUp" class="btn btn-orange btn-lg btn-block">Sign Up</button>
+                                    </div>
+                                    <small>By signing up, you agree to Juantravellers Terms &Aacute; Conditions and Privacy Policy</small>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="login-img" class="col-md-5 col-sm-12" style="background-image: url('/Content/Image/login-bg.png');">
+                            <br />
+                            <div id="logo-mini" class="row mb-3 align-items-center">
+                                <img src="@Url.Content("~/Content/Image/jt-logo-white.png")" class="img-responsive" />
+                            </div>
+                            <div id="inquiry-text" class="col-md-12 text-center login-txt">
+                                <h3 class="">
+                                    Why Choose Juantraveller?
+                                </h3>
+                                <div class="row text-center">
+                                    <div class="col-md-10" style="margin:0 auto;">
+                                        If you have any question about Juantraveller, or simply seek advice and support, we are
+                                        here to assist you, Simply fill out the form below, and a Juantraveller representative
+                                        will contact you.
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row mb-4 text-center" style="bottom:0; padding-top:250px">
+                                <div class="col-md-8" style="margin:0 auto;">
+                                    <button type="button" id="a-btnSignIn" class="btn btn-transparent btn-block">Sign In</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer font-small unique-color-dark  bg-dark-blue-package">
+        <div class="row">
+
+        </div>
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5">
+
+            <!-- Grid row -->
+            <div class="row mt-3">
+
+                <!-- Grid column -->
+                <div class="col-md-4  mb-4">
+
+                    <!-- Content -->
+                    <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+
+                        <img src="@Url.Content("~/Content/Image/logo2.png")" height="65" alt="CoolBrand">
+
+                    </a>
+
+                    <p>
+                        Juantraveller is an all-in-one online booking platform for all your travel needs - accommodations,
+                        activities, transportation. Easily plan and customize your travel itinerary online and uncover wonderful
+                        places to visit, and amazing activities to do in the Philippines.
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-4  mx-auto mb-4 pt-4">
+
+                    <!-- Links -->
+                    <h6 class="text-capitalize  footer-title-package">About Juantraveller</h6>
+                    <div class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"></div>
+                    <div class="row">
+                        <div class="col-md-5 mb-md-0 mb-3">
+                            <p>
+                                <a class="hover-orange text-white" href="@Url.Action("HelpCenter", "Site", new { keysource = "started" })">About us</a>
+                            </p>
+                            <p>
+                                <a class="hover-orange text-white" href="@Url.Action("ContactUs", "Site")">Contact us</a>
+                            </p>
+                            <p>
+                                <a class="hover-orange text-white" href="@Url.Action("HelpCenter", "Site", new { keysource = "userGuide" })">Help Center</a>
+                            </p>
+                        </div>
+                        <div class="col-md-6 mb-md-0 mb-3">
+                            <p>
+                                <a class="hover-orange text-white" href="@Url.Action("HelpCenter", "Site", new { keysource = "terms" })">Terms and Condition</a>
+                            </p>
+                            <p>
+                                <a class="hover-orange text-white" href="@Url.Action("HelpCenter", "Site", new { keysource = "privacy" })">Privacy Policy</a>
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                @*<div class="col-md-3  mx-auto mb-4">
+
+                        <h6 class="text-capitalize footer-title-package">Payment Partners</h6>
+                        <div class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"></div>
+
+                        <p>
+                            <a class="text-white" href="#!">Your Account</a>
+                        </p>
+                        <p>
+                            <a class="text-white" href="#!">Become an Affiliate</a>
+                        </p>
+                        <p>
+                            <a class="text-white" href="#!">Shipping Rates</a>
+                        </p>
+                        <p>
+                            <a class="text-white" href="#!">Help</a>
+                        </p>
+
+                    </div>*@
+
+                <div class="col-md-3 mx-auto mb-4 pt-4">
+                    @*<div class="row py-4 d-flex align-items-center">*@
+
+                    <!-- Grid column -->
+                    @*<div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                            Copyright © 2019 Juantraveller.. All rights reserved.
+                        </div>*@
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div id="socialIcon" class="col-md-12 col-lg-7 text-black text-center text-md-right">
+                        <p class="text-white">Follow Us</p>
+                        <!-- Facebook -->
+                        <a class="fb-ic bc-blue-txt">
+                            <i class="fab fa-facebook-f mr-2"></i>
+                        </a>
+                        <!-- Twitter mr-4-->
+                        <a class="tw-ic bc-blue-txt">
+                            <i class="fab fa-twitter  mr-2"> </i>
+                        </a>
+
+
+                        <!--Instagram-->
+                        <a class="ins-ic bc-blue-txt">
+                            <i class="fab fa-instagram "> </i>
+                        </a>
+
+                    </div>
+                    <!-- Grid column -->
+                    @*</div>*@
+                </div>
+                <!-- Grid column -->
+
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <div class="container">
+            <div class="row py-4 d-flex align-items-center">
+                <div class="col-md-4  mb-4">
+                    <h6 class="text-capitalize  footer-title-package">Available Payments</h6>
+                    <!-- Content -->
+
+
+                    <img src="@Url.Content("~/Content/Image/visaCard.jpg")" height="65" alt="CoolBrand">
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <!-- Footer Links -->
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <div class="container">
+
+                <div class="row py-4 d-flex align-items-center">
+                    <div class="col-md-4  mb-4">
+
+
+
+
+
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                        Copyright © 2019 Juantraveller.. All rights reserved.
+                    </div>
+
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    @*<div id="socialIcon" class="col-md-6 col-lg-7 text-black text-center text-md-right">
+
+                            <!-- Facebook -->
+                            <a class="fb-ic bc-blue-txt">
+                                <i class="fab fa-facebook-f mr-2"></i>
+                            </a>
+                            <!-- Twitter mr-4-->
+                            <a class="tw-ic bc-blue-txt">
+                                <i class="fab fa-twitter  mr-2"> </i>
+                            </a>
+
+
+                            <!--Instagram-->
+                            <a class="ins-ic bc-blue-txt">
+                                <i class="fab fa-instagram "> </i>
+                            </a>
+
+                        </div>*@
+                    <!-- Grid column -->
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Copyright -->
+
+    </footer>
+
+    <script type="text/javascript">var baseUrl = "@Url.Content("~/")"</script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Content/js/popper.min.js"></script>
+    <script src="~/Content/js/bootstrap.js"></script>
+    <script src="~/Content/js/sweetalert2.min.js"></script>
+    <script src="~/Content/js/jquery.validate.js"></script>
+    <script src="~/Content/js/dropzone.min.js"></script>
+    <script src="~/Content/js/bootstrap4-toggle.js"></script>
+    <script src="~/Content/js/jt-global.js"></script>
+    <script src="@Url.Content("~/Content/js/moment.js")"></script>
+    <script src="@Url.Content("~/Content/js/accounting.js")"></script>
+    <script src="@Url.Content("~/Content/js/jquery.blockUI.js")"></script>
+    <script src="@Url.Content("~/Content/js/daterangepicker.js")"></script>
+    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+    @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>*@
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
     @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        var UserSignUp = '@Url.Action("SignUp", "User")';
+        var LogInGuest = '@Url.Action("GuestLogIn", "User")';
+        var UserSignUpSuccess = '@Url.Action("SignUp", "Site")';
+        var Juantraveller = '@Url.Action("Index", "Home")';
+        var Login = '@Url.Action("Login", "User")';
+        var ForgotPassword = '@Url.Action("ForgotPassword", "User")';
+        var Home = '@Url.Action("Index", "Home")';
+         var OriginList = '@Url.Action("OriginList", "Transport")';
+    </script>
 </body>
 </html>

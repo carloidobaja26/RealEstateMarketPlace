@@ -1,0 +1,225 @@
+﻿.sub-title-orange {
+    font-size: 16px;
+    color: orange;
+    font-weight: bolder;
+}
+.off-percent {
+    color: #0aa181;
+    border: 1px solid #0aa181 !important;
+    border-radius: 5px;
+    padding: 0.01em 5px;
+}
+.lbl-description {
+    display: block;
+    height: 40px;
+    overflow: hidden;
+}
+
+.img-hover-opacity:hover {
+    opacity: 0.3;
+}
+
+.bottom-border-orange {
+    border-bottom: 3px #f9a147 solid;
+}
+
+.package-image-min-height {
+    min-height: 233px;
+}
+
+.package-image {
+    height: 233px !important;
+    /*display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    
+    vertical-align: middle;*/
+}
+
+    /*.package-image {
+        height: 302px;
+        width: 180px;
+}*/
+    .package-image > img {
+        height: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        vertical-align: middle;
+        object-fit: cover;
+
+    }
+
+.text-over h7 span {
+    color: white;
+    font-size: 13px;
+    letter-spacing: 1px;
+    background-color: rgba(208, 86, 14, 0.48);
+    -ms-text-shadow: 0 0 1px #000;
+    text-shadow: 0 0 1px #000;
+    width: 100%;
+    display: block;
+    padding: 8px;
+}
+
+.text-over h7 {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.description-min-height {
+    min-height: 62px;
+}
+
+@media (min-width: 892px) {
+    .container2 {
+        max-width: 920px;
+    }
+}
+
+.card-text-package-title {
+    min-height: 50px;
+}
+
+.card-text-package-description {
+    min-height: 84px;
+}
+/*@media (max-width: 895px) {
+    .card-text-package-title {
+        min-height: 70px;
+    }
+}
+@media (max-width: 895px) {
+    .card-text-package-description {
+        min-height: 122px;
+    }
+}*/
+@media (max-width: 1000px) {
+    .card-text-package-title {
+        min-height: 70px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .card-text-package-description {
+        min-height: 122px;
+    }
+}
+
+/*.carousel-control-next,
+.carousel-control-prev {
+    width: 0%;
+    bottom: 230px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    height: 80px;
+    width: 80px;
+    display: inline-block;
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+}
+
+    .carousel-control-next-icon:after {
+        content: '>';
+        font-size: 50px;
+        color: black;
+    }
+
+.carousel-control-prev-icon:after {
+    content: '<';
+    font-size: 50px;
+    color: black;
+   
+}*/
+
+
+
+.banner-image {
+    height: 350px !important;
+    /*display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    
+    vertical-align: middle;*/
+}
+
+    /*.package-image {
+        height: 302px;
+        width: 180px;
+}*/
+    .banner-image > img {
+        height: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        /*width: auto;*/
+        width: 100%;
+        vertical-align: middle;
+    }
+
+.slick-prev:before {
+    color: black;
+}
+
+.slick-next:before {
+    color: black;
+}
+.slick-banner slick-next:before {
+    color: white;
+}
+
+.img-gallery-active {
+    width: 100%;
+    height: 280px;
+    border-radius: 10px;
+    background-size: auto 100% !important;
+}
+
+
+nav .input-field {
+    margin: 0;
+}
+
+    nav .input-field input {
+        height: 100%;
+        font-size: 1.2rem;
+        border: none;
+        padding-left: 2rem;
+    }
+
+        nav .input-field input:focus, nav .input-field input[type=text]:valid, nav .input-field input[type=password]:valid, nav .input-field input[type=email]:valid, nav .input-field input[type=url]:valid, nav .input-field input[type=date]:valid {
+            border: none;
+            box-shadow: none;
+        }
+
+    nav .input-field label {
+        top: 0;
+        left: 0;
+    }
+
+        nav .input-field label i {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color .3s;
+        }
+
+        nav .input-field label.active i {
+            color: #fff;
+        }
+
+        nav .input-field label.active {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+.calendar-text {
+    margin-top: .3em;
+}
+

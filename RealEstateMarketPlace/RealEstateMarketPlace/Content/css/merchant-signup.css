@@ -1,0 +1,88 @@
+﻿
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/*#prevBtn {
+  background-color: #;
+}*/
+
+/* Make circles that indicate the steps of the form: */
+.step {
+    color:#fff;
+  height: 25px;
+  width: 25px;
+  margin: 0 2px;
+  background-color: #313030;
+  border: none;  
+  border-radius: 50%;
+  display:block;
+
+}
+
+span.active {
+  opacity: 1;
+   background-color: #ed741e !important;
+}
+
+label.active{
+     color: #ed741e !important;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #0ca181;
+}
+
+.steps.finish {
+  color: #0ca181;
+}
+
+.m-title-thankyou{
+    font-size:38px;
+    font-weight:bolder;
+    color:#0ca181;
+}
+
+.m-thankyou-msg{
+    font-size:22px;
+  
+    color:#808080;
+}
+
+a.btn.btn-orange:hover{
+    color:#fff !important;
+    font-weight:bold;
+}
+.list-ids{
+    color:black;
+    /*font-size:16px;*/
+
+}
+
+ul.custom-popover{
+    list-style: circle;
+}
+.popper{
+    padding-left:25px;
+}

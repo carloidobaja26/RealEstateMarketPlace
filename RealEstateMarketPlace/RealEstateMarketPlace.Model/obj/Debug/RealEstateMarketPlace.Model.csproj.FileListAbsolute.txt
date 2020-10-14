@@ -1,0 +1,6 @@
+C:\Users\Ade\Documents\GitHub\RealEstateMarketPlace\RealEstateMarketPlace\RealEstateMarketPlace.Model\bin\Debug\RealEstateMarketPlace.Model.dll
+C:\Users\Ade\Documents\GitHub\RealEstateMarketPlace\RealEstateMarketPlace\RealEstateMarketPlace.Model\bin\Debug\RealEstateMarketPlace.Model.pdb
+C:\Users\Ade\Documents\GitHub\RealEstateMarketPlace\RealEstateMarketPlace\RealEstateMarketPlace.Model\obj\Debug\RealEstateMarketPlace.Model.csprojAssemblyReference.cache
+C:\Users\Ade\Documents\GitHub\RealEstateMarketPlace\RealEstateMarketPlace\RealEstateMarketPlace.Model\obj\Debug\RealEstateMarketPlace.Model.csproj.CoreCompileInputs.cache
+C:\Users\Ade\Documents\GitHub\RealEstateMarketPlace\RealEstateMarketPlace\RealEstateMarketPlace.Model\obj\Debug\RealEstateMarketPlace.Model.dll
+C:\Users\Ade\Documents\GitHub\RealEstateMarketPlace\RealEstateMarketPlace\RealEstateMarketPlace.Model\obj\Debug\RealEstateMarketPlace.Model.pdb

@@ -1,0 +1,391 @@
+﻿
+ 
+    .list-group-item {
+            border: 0px;
+    }
+    .Savebtn1 { 
+        width: 158px;
+        height: 40px;
+        background: #FF793F;
+        border-radius: 5px;
+        float: right;
+        border: 0px;
+        color: #ffffff;
+        margin-bottom: 152px;
+     }
+     .tab-list {            
+        width: 224px;
+        height: 53px;
+        background: #F8FAFB;
+     }
+     .tab-list:hover {
+
+        color: #ffffff;
+        background: #FF793F;
+     }
+     .tab-icon {
+        width: 24px;
+        height: 24px;
+     }
+     .input-list {
+        margin-bottom: 44px;
+        width: 730px;
+        height: 577px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 10px rgba(163, 163, 163, 0.2);
+        border-radius: 5px;
+    }
+         .input-list1 {
+        margin-bottom: 44px;
+        width: 730px;
+        height: 287px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 10px rgba(163, 163, 163, 0.2);
+        border-radius: 5px;
+    }
+    .label-lbl {
+        width: 103px;
+        height: 16px;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 16px;
+        color: #7C7C7C;
+    }
+    .div-4 {
+        padding: 0px;
+    }
+    .div-8 {
+        padding: 0;
+    }
+    .label-list {
+        margin-left: 34px;
+    }
+      .label-list1 {
+        margin: 26px 0px 0px 34px;
+    }
+    .input-lists {
+        margin-left: 34px;
+        width: 663px;
+        height: 40px;
+        background: #F8F8F8;
+        border: 1px solid #E1E1E1;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin-bottom: 19px;
+    }
+    .div-save {
+         width: 730px;
+    }
+    .img-div {
+          border-radius: 50%;
+            width: 83px;
+            height: 83px;
+        margin: 10px 24px 50px 34px;
+    }
+    .btn-upload {
+        padding: 0;
+        width: 158px;
+        height: 40px;
+        margin: 32px 8px 7px 0;
+        background: #FF793F;
+        border-radius: 5px;
+        vertical-align: top;
+        color: #fff;
+ 
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 16px;
+        color: #FFFFFF;
+    }
+    .btn-remove {
+        width: 97px;
+        height: 40px;
+         margin: 32px 0 7px 0;
+        background: #E1E1E1;
+        border-radius: 5px;      
+        vertical-align: top; 
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 16px;
+        color: #000000;
+    }
+    .text-img {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+
+    }
+        .sidebar-heading {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 17px;
+        line-height: 20px;
+        width: 224px;
+        color: #000000;
+            float: right;
+            padding-left: 10px;
+            margin-bottom: 20px;
+    }
+       .about-me {
+          margin-bottom:17px;
+          font-family: Lato;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 24px;
+            color: #000000;
+       }
+       #lbl-26 {
+           padding-top: 26px;
+       }
+       /*a:active { 
+  background-color: #FF793F;
+}*/
+           .Savebtn2 { 
+        width: 158px;
+        height: 40px;
+        background: #FF793F;
+        border-radius: 5px;
+        float: right;
+        border: 0px;
+        color: #ffffff;
+        margin-bottom: 445px;
+     }
+
+               .linkAcc {
+        position: absolute;
+        width: 730px;
+        height: 107px;
+
+        background: #FFFFFF;
+        box-shadow: 0px 4px 10px rgba(163, 163, 163, 0.2);
+        border-radius: 5px;
+    }
+        .linkAcc2 {
+       position: absolute;
+        width: 730px;
+        height: 100px;
+      
+        margin: 120px 0  592px 0;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 10px rgba(163, 163, 163, 0.2);
+        border-radius: 5px;
+    }
+            .fb-icon {
+        
+        width: 38px;
+        height: 38px;
+        left: 501px;
+        top: 212px;
+        margin: 12px 0px 22px 34px;
+    }
+    .google-icon {
+        /*position: absolute;*/
+        width: 39px;
+        height: 39px;
+        left: 501px;
+        top: 333px;
+        margin: 12px 0px 16px 34px;
+    }
+        .labels {
+        float: right;
+   
+
+        height: 16px;
+
+
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 16px;
+                margin: 27px 26px 0 0;
+        color: #0CA181;
+    }
+            .text {  
+        position: absolute;
+        width: 95px;
+        height: 16px;
+        padding: 0px;
+
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 16px;
+        /* identical to box height */
+
+        margin-left: 34px;
+        color: #767676;
+     
+    }
+        .text2 {
+      
+        position: absolute;
+        width: 95px;
+        height: 16px;
+        padding: 0px;
+
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 16px;
+        /* identical to box height */
+
+
+        color: #767676;
+
+         margin-left: 34px;
+      
+    }
+    .text-fb {
+        margin-left: 20px;
+        color: #000000;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+             .input-list-link-acc {
+        margin-bottom: 17px;
+        width: 730px;
+        height: 107px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 10px rgba(163, 163, 163, 0.2);
+        border-radius: 5px;
+
+
+    }
+                          .input-list-link-acc1 {
+        margin-bottom: 44px;
+        width: 730px;
+        height: 100px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 10px rgba(163, 163, 163, 0.2);
+        border-radius: 5px;
+
+                              margin-bottom: 592px;
+    }
+
+
+
+
+        .delete-accunt-container {
+        width: 491px;     
+        margin:56px 0 102px 0;
+    }
+            .text-head {
+      
+        width: 491px;
+        height: 72px;
+        left: 485px;
+        top: 330px;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 36px;
+        margin-top: 29px;
+        color: #000000;
+    }
+        .text-smalls {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 45px;
+        margin-bottom: 17px;
+        text-align: justify;
+        color: #000000;
+    }
+        .mb-23 {
+        margin: 0px 16px 23px 0;
+        width: 16px;
+        height: 16px;
+        background: #C4C4C4;
+        border-radius: 3px;
+        vertical-align: top;
+    }
+    .lbl-checkbox {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+        margin: 0;
+        color: #000000;
+    }
+       .info{
+        width: 466px;
+        height: 160px;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: justify;
+        color: #767676;
+     }
+           .button-cancel {
+        width: 221px;
+        height: 40px;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 16px;
+        color: #FFFFFF;
+        background: #FF793F;
+        border-radius: 5px;
+    }
+    .btn-delete-account {
+        width: 158px;
+        height: 40px;
+        background: #E1E1E1;
+        border-radius: 5px;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 16px;
+        float: right;
+        color: #000000;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 16px;
+        color: #000000;
+    }
+        .btn-div {
+        margin: 42px 0 102px 0;
+        width: 399px;
+        height: 40px;
+        left: 520px;
+        top: 1065px;
+ 
+    }
+textarea {
+    width: 466px;
+    height: 140px;
+    margin: 3px 0 18px 0;
+    border: 1px solid;
+    border: 1.5px solid #AFAFAF;
+    box-sizing: border-box;
+}
+.list-group a.active {
+       background: #FF793F;
+}

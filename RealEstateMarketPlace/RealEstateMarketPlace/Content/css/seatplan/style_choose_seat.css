@@ -1,0 +1,428 @@
+.my-nav {
+    background: #2c2c2c;
+    border: none;
+    color: white;
+    padding: 35px;
+}
+
+.my-nav-container {
+    margin: 0 auto;
+    width: 90%;
+    position: relative;
+}
+
+    .my-nav-container .my-nav-right {
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        top: -10px;
+    }
+
+    .my-nav-container .my-nav-left {
+        position: absolute;
+        right: 0;
+        top: -10px;
+    }
+
+        .my-nav-container .my-nav-left li {
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            top: -30px;
+            padding: 20px 30px 15px 30px;
+            text-align: center;
+        }
+
+        .my-nav-container .my-nav-left span {
+            font-size: 11px;
+            display: block;
+        }
+
+.my-active {
+    background: #1d74b0;
+}
+
+.test2 {
+    position: relative;
+}
+
+.right-sidebar {
+    position: fixed;
+    right: 0;
+    border: 1px solid #dadada;
+    background: white;
+    /*width: 22%; original code note by kim*/
+    width: 31%; /*modified by kim*/
+    height: 100vh;
+    font-size: 15px;
+    /*width:600px; */
+    overflow-y: scroll;
+    padding-top: 15px;
+    /*position:relative;*/
+    /*height: 300px;*/
+}
+
+    .right-sidebar label {
+        font-size: 12px;
+    }
+
+.customize-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 10px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.flex-item {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    vertical-align: middle;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.customs {
+    border-bottom: 1px solid #dddddd;
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    position: relative;
+}
+
+.align {
+    margin-right: 20px;
+}
+
+    .align.active {
+        background: #007bff;
+    }
+
+.pcr-button {
+    width: 100% !important;
+}
+
+.form-custom[readonly] {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1;
+    color: #495057;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    display: block;
+    background: white;
+    width: 40%;
+    margin-left: 20px;
+}
+
+.input_number {
+    padding: 8px;
+    font-size: 1rem;
+    line-height: 1;
+    color: #495057;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+    display: block;
+    background: white;
+    width: 30%;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+.transform_custom {
+    position: relative;
+}
+
+    .transform_custom div:first-child {
+        margin-top: 15px;
+    }
+
+    .transform_custom div:nth-child(2) {
+        position: absolute;
+        top: -5px;
+        right: 0;
+        width: 70%;
+    }
+
+        .transform_custom div:nth-child(2).ui-slider {
+            width: 65%;
+            margin-top: 20px;
+            height: 0px;
+        }
+
+            .transform_custom div:nth-child(2).ui-slider span {
+                border-radius: 100%;
+                margin-top: -5px;
+                outline: none;
+            }
+
+#seat-plan-container {
+    overflow: hidden;
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    background-color: transparent;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(24%, transparent), color-stop(25%, rgba(50, 170, 84, 0.5)), color-stop(26%, rgba(50, 170, 84, 0.5)), color-stop(27%, transparent), color-stop(74%, transparent), color-stop(75%, rgba(50, 170, 84, 0.5)), color-stop(76%, rgba(50, 170, 84, 0.5)), color-stop(77%, transparent), to(transparent)), -webkit-gradient(linear, left top, right top, color-stop(24%, transparent), color-stop(25%, rgba(50, 170, 84, 0.5)), color-stop(26%, rgba(50, 170, 84, 0.5)), color-stop(27%, transparent), color-stop(74%, transparent), color-stop(75%, rgba(50, 170, 84, 0.5)), color-stop(76%, rgba(50, 170, 84, 0.5)), color-stop(77%, transparent), to(transparent));
+    background-image: linear-gradient(0deg, transparent 24%, rgba(50, 170, 84, 0.5) 25%, rgba(50, 170, 84, 0.5) 26%, transparent 27%, transparent 74%, rgba(50, 170, 84, 0.5) 75%, rgba(50, 170, 84, 0.5) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(50, 170, 84, 0.5) 25%, rgba(50, 170, 84, 0.5) 26%, transparent 27%, transparent 74%, rgba(50, 170, 84, 0.5) 75%, rgba(50, 170, 84, 0.5) 76%, transparent 77%, transparent);
+    height: 455px;
+    width: 715px;
+    background-size: 50px 50px;
+    -webkit-font-smoothing: antialiased;
+    margin-left: -70px;
+    margin-top: -50px;
+}
+
+#seat-plan {
+    position: absolute;
+}
+
+.text {
+    font-family: "Arial";
+    line-height: 1.1;
+    outline: 0;
+    position: absolute;
+    min-width: 2px;
+    cursor: text;
+    word-wrap: break-word;
+    white-space: pre;
+    -webkit-transition-duration: inherit;
+    transition-duration: inherit;
+}
+
+.notransition {
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+html, body {
+    margin: 0;
+    font-family: arial;
+    background: #f4f4f4;
+}
+
+.content-body {
+    position: relative;
+}
+
+    .content-body .seat-plan {
+        position: fixed;
+        margin: 10px;
+        height: 91vh;
+        width: 77vw;
+    }
+
+.section_border {
+    border: 1px solid blue;
+}
+
+.ui-selectable-helper {
+    background: rgba(219, 233, 244, 0.5);
+    border: none;
+}
+
+    .ui-selectable-helper span {
+        font-size: 20px;
+    }
+
+.test {
+    width: 500px;
+    height: 600px;
+    border: 1px solid black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.seats.ui-selecting {
+    background: #067464 !important;
+}
+
+.seats.ui-selected {
+    background: #067464 !important;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.section_holder {
+    position: absolute;
+    border: 1px solid black;
+    padding: 20px;
+    z-index: -1;
+}
+
+.sections {
+    cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    /* Firefox */
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+#stage {
+    position: absolute;
+    border-radius: 20px;
+    text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+}
+
+.seats {
+    /*background: black;*/
+    background: rgb(50, 170, 153);
+    /* color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px; */
+    /* margin: 5px; */
+
+    width: 30px; /*modified by kim*/
+    color: white;
+    border-radius: 20%;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-transition-duration: inherit;
+    transition-duration: inherit;
+
+}
+
+
+.taken_seats {
+    /*background: black;*/
+    background: #090e64;
+    /* color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px; */
+    /* margin: 5px; */
+    width: 30px; /*modified by kim*/
+    color: white;
+    border-radius: 20%;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-transition-duration: inherit;
+    transition-duration: inherit;
+}
+
+
+.boarded_seats {
+    /*background: black;*/
+    background: #090e64;
+    /* color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px; */
+    /* margin: 5px; */
+    width: 30px; /*modified by kim*/
+    color: white;
+    border-radius: 20%;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-transition-duration: inherit;
+    transition-duration: inherit;
+}
+
+.create_seats {
+    position: absolute;
+    background: rgba(219, 233, 244, 0.5);
+    border: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.columns {
+    -webkit-transition-duration: inherit;
+    transition-duration: inherit;
+}
+/*# sourceMappingURL=style.css.map */
+
+
+/*modified by kim*/
+button:hover {
+    background-color: black;
+}
+
+

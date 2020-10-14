@@ -1,0 +1,162 @@
+﻿@media only screen and (min-width: 1024px) and (max-width: 1024px) {
+    #destination img, #experience img {
+        height: 320px;
+        width: 100%;
+        cursor: pointer;
+           border-radius:8px;
+    }
+    #htl-image-container img{
+        height: 170px;
+        width: 100%;
+        cursor: pointer;
+           border-radius:8px;
+    }
+    .room-poster-img{
+        height:400px !important;
+        width:100%;
+        border-radius:8px;
+    }
+    .rs-data-img {
+        height: 250px !important;
+        width: 100%;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #destination img, #experience img{
+        height: 350px;
+        width: 100%;
+        cursor: pointer;
+          border-radius:8px;
+    }
+     #htl-image-container img{
+        height: 200px;
+        width: 100%;
+     
+           border-radius:5px;
+    }
+
+      .room-poster-img{
+        height:400px !important;
+        width:100%;
+        border-radius:8px;
+    }
+    .container{
+        max-width: 1300px !important;
+    }
+     .container2{
+        max-width: 1000px !important;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 600px) {
+     #destination img, #experience img {
+        height: 220px;
+        width: 100%;
+        cursor: pointer;
+          border-radius:8px;
+    }
+    .rs-data-img {
+        height: 250px !important;
+        width: 100%;
+        cursor: pointer;
+    }
+    #destination .slick-slide, #experience .slick-slide {
+        margin: 0 2px;
+    }
+    body {
+        overflow-x:hidden;
+    }
+}
+
+
+@media only screen and (min-width: 1280px) and (max-width: 1280px) {
+    #destination img, #experience img {
+        height: 350px;
+        width: 100%;
+        cursor: pointer;
+         border-radius:8px;
+    }
+  
+}
+@media  (min-width: 576px){
+    .modal-dialog {
+    max-width: 850px !important;
+    margin: 1.75rem auto;
+}
+    .modal-sm {
+    max-width: 450px !important;
+    margin: 1.75rem auto;
+}
+}
+
+@media only screen and (max-width: 692px){
+    .login-txt{
+        display:none !important;
+    }
+    /*#inquiry-text{
+        display:none !important;
+    }
+    #inquiry{
+        display : none !important;
+    }*/
+      #inquiry{
+        min-height : 180px !important;
+    }
+    .sub-header-img {
+        min-height: 180px;
+    }
+    #carouselExampleIndicators, #page-header-div{
+          display : none !important;
+    }
+    #hsearch-div{
+        padding-top:5rem !important;
+    }
+}
+
+@media only screen and (max-width: 692px){
+    h2.locations{
+        font-size:20px !important;
+        margin-top:10px;
+    }
+    .s-dates{
+        font-size:14px !important;
+        margin-top:10px;
+    }
+     #htl-image-container img{
+        height: 170px;
+        width: 100%;
+        cursor: pointer;
+           border-radius:8px;
+    }
+}
+
+@media only screen and (max-width: 760px){
+   
+     #htl-image-container img{
+        height: 320px;
+        width: 100%;
+        cursor: pointer;
+           border-radius:8px;
+    }
+}
+
+
+@media (min-width: 992px){
+    .container2 {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container2 {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 576px){
+        .container2 {
+        max-width: 540px;
+    }
+}
