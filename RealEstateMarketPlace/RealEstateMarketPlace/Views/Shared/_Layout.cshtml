@@ -7,68 +7,160 @@
     @*@Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")*@
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
-
     <link href="~/Content/css/Main.css" rel="stylesheet" />
     <link href="~/Content/css/Main2.css" rel="stylesheet" />
     <link href="@Url.Content("~/Content/css/media.css")" rel="stylesheet" />
-    <link href="@Url.Content("~/Content/css/packageLayout.css")" rel="stylesheet" />
     @*<link href="@Url.Content("~/Content/font-awesome-4.7.0/css/font-awesome.css")" rel="stylesheet" />*@
     <link href="@Url.Content("~/Content/fontawesome-5.10.0/css/all.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/css/sweetalert2.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/css/bootstrap4-toggle.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/css/dropzone.min.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/css/daterangepicker.css")" rel="stylesheet" />
-    @*<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />*@
+
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href="@Url.Content("~/Content/css/packageLayout.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/package/indexPackage.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/slick/slick-theme.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/slick/slick.css")" rel="stylesheet" />
+
     @RenderSection("style", required: false)
 </head>
 <body id="body-div">
 
-
-    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white nav-shadow ">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark-blue-package">
         <div class="container">
-            <a href="@Url.Action("Index", "Home")" class="navbar-brand">
-                <img src="@Url.Content("~/Content/Image/Logo-orange.png")" height="65" alt="CoolBrand">
 
+
+            <a href="@Url.Action("Index", "Package")" class="navbar-brand">
+                <img src="@Url.Content("~/Content/Image/JTtrourslogo.jpg")" height="65" alt="CoolBrand">
             </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <div class="input-group md-form form-sm form-1 pl-0 search-package">
+                <div class="input-group-prepend">
+                    <span class="input-group-text bc-blue-txt" id="basic-text1">
+                        <i class="fas fa-search text-white"
+                           aria-hidden="true"></i>
+                    </span>
+                </div>
+                <input class="form-control my-0 py-1 bc-blue-txt search-package" type="text" placeholder="Search" aria-label="Search" id="searchPackage">
+            </div>
+            <button type="button" class="navbar-toggler white-text" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
+
+            <div class="collapse navbar-collapse text-white" id="navbarCollapse">
                 <ul class="navbar-nav navbar-nav ml-auto">
-                    <li class="nav-item ">
-                        <a href="@Url.Action("Inquiry", "Merchant")" class="nav-item nav-link">Be a merchant</a>
+                    <li class="nav-item">
+                        <a href="@Url.Action("About", "Package")" class="nav-item nav-link text-white">About</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("Faq", "Package")" class="nav-item nav-link text-white">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="@Url.Action("ContactUs", "Package")" class="nav-item nav-link text-white">Contact Us</a>
+                    </li>
+
                     @{
                         var x = Session["UserID"];
                         if (Session["UserID"] == null)
                         {
                             <li class="nav-item">
-                                <a href="#" data-toggle="modal" data-target="#modalLogin" class="nav-item nav-link"><i class="fas fa-user-circle"></i> Sign In</a>
+                                <a href="#" data-toggle="modal" data-target="#modalLogin" class="nav-item nav-link text-white"><i class="fas fa-user-circle"></i> Log In</a>
                             </li>
-
+                            <li class="nav-item ">
+                                <a href="@Url.Action("SellMyDeals", "Package")" class="btn btn-orange">Sell My Deals</a>
+                            </li>
                         }
                         else
                         {
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-black" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <li class="nav-item">
+                                <a href="@Url.Action("SellMyDeals", "Package")" class="nav-item nav-link text-white">Sell My Deals</a>
+                            </li>
+                            <li class="nav-item dropdown white-text">
+                                <a class="nav-link dropdown-toggle white-text" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img class="img-div mr-2 img-responsive" style="width:  30px;    margin-top: -5px; height:30px" alt="Image" src="@(Session["Image"])" /> @Session["Firstname"]
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item mb-2" href="@Url.Action("Profile", "User")"><i class="fas fa-user-circle text-orange mr-3"></i> Profile</a>
-                                    <a class="dropdown-item mb-2" href="@Url.Action("Index", "TransactionHistory")"><i class="fa fa-list text-orange mr-3"></i>Transaction History</a>
+                                    <a class="dropdown-item mb-2" href="@Url.Action("Profile", "User")"><i class="fas fa-user-circle text-dark mr-3"></i> Profile</a>
+                                    <a class="dropdown-item mb-2" href="@Url.Action("Index", "TransactionHistory")"><i class="fa fa-list text-dark mr-3"></i>Transaction History</a>
                                     <hr />
-                                    <a class="dropdown-item mb-2" href="@Url.Action("Logout", "Site")"><i class="fas fa-sign-out-alt text-orange mr-3"></i>Sign Out</a>
+                                    <a class="dropdown-item mb-2" href="@Url.Action("Logout", "Site")"><i class="fas fa-sign-out-alt text-dark mr-3"></i>Sign Out</a>
                                 </div>
                             </li>
+
                         }
                     }
+
 
                 </ul>
             </div>
 
+
+
+            @*<div id="data-preloader" style="display: none;">
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>*@
+
+
+
+            @*<button type="button" class="navbar-toggler white-text" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav navbar-nav ml-auto white-text">
+                        <li class="nav-item white-text">
+                            <a href="@Url.Action("Inquiry", "Merchant")" class="nav-item nav-link white-text">Be a merchant</a>
+                        </li>
+                                <li class="nav-item dropdown white-text">
+                                    <a class="nav-link dropdown-toggle white-text" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <img class="img-div mr-2 img-responsive" style="width:  30px;    margin-top: -5px; height:30px" alt="Image" src="@(Session["Image"])" /> @Session["Firstname"]
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item mb-2" href="@Url.Action("Profile", "User")"><i class="fas fa-user-circle text-orange mr-3"></i> Profile</a>
+                                        <a class="dropdown-item mb-2" href="@Url.Action("Index", "TransactionHistory")"><i class="fa fa-list text-orange mr-3"></i>Transaction History</a>
+                                        <hr />
+                                        <a class="dropdown-item mb-2" href="@Url.Action("Logout", "Site")"><i class="fas fa-sign-out-alt text-orange mr-3"></i>Sign Out</a>
+                                    </div>
+                                </li>
+                    </ul>
+                </div>*@
+
         </div>
+
     </nav>
+
+    <div class="grey darken-1 fixed-top-2  no-margin  pb-3 pt-4 breadcrumb">
+        <div class="container">
+            <div class="row font-14">
+                <div class="col-md-1 col-1 text-sm-center">
+                    <a class="text-dark" href="@Url.Action("ShowAll", "Package")"><i class="fas fa-globe mr-2"></i> Show All</a>
+                </div>
+                <div class="col-md-2 col-2 text-sm-center">
+                    <a class="text-dark" href="@Url.Action("TodaysDeal", "Package")"><i class="fas fa-clipboard-check mr-2"></i> Todays Deal</a>
+                </div>
+                <div class="col-md-2 col-2 text-sm-center">
+                    <a class="text-dark" href="@Url.Action("PopularDeal", "Package")"><i class="far fa-star mr-2"></i> Popular Deals</a>
+                </div>
+                <div class="col-md-2 col-2 text-sm-center">
+                    <a class="text-dark" href="@Url.Action("Restaurant", "Package")"><i class="	fas fa-utensils"></i> Restaurant</a>
+                </div>
+                <div class="col-md-2 col-2 text-sm-center">
+                    <a class="text-dark" href="@Url.Action("Activities", "Package")"><i class="fas fa-swimmer mr-2"></i> Activities</a>
+                </div>
+                <div class="col-md-2 col-2 text-sm-center">
+                    <a class="text-dark" href="@Url.Action("HealthAndBeauty", "Package")"><i class="fas fa-spa mr-2"></i> Health & Beauty</a>
+                </div>
+                <div class="col-md-1 col-1 text-sm-center">
+                    <a class="text-dark" href="@Url.Action("Tours", "Package")"><i class="fas fa-route mr-2"></i> Tour</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <div id="data-preloader" style="display: none;">
         <div class="d-flex justify-content-center">
             <div class="spinner-border" role="status">
@@ -84,53 +176,53 @@
         <!-- Footer -->
     </div>
 
+
     <div class="modal fade" id="modalLogin">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
 
-                <!-- Modal Header -->
-                @*<div class="modal-header">
-                        <h4 class="modal-title">Modal Heading</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>*@
 
-                <!-- Modal body -->
                 <div class="modal-body pt-0 pb-0">
                     <div class="row">
                         <div id="login-img" class="col-md-5 col-sm-12" style="background-image: url('/Content/Image/login-bg.png');">
                             <br />
-                            <div id="logo-mini" class="row mb-3 align-items-center">
-                                <img src="@Url.Content("~/Content/Image/jt-logo-white.png")" class="img-responsive" />
-
-                            </div>
-                            <div id="inquiry-text" class="col-md-12 text-center login-txt">
-                                <h3 class="">
-                                    Why Choose Juantraveller?
-                                </h3>
-                                <div class="row text-center">
-                                    <div class="col-md-10" style="margin:0 auto;">
-                                        If you have any question about Juantraveller, or simply seek advice and support, we are
-                                        here to assist you, Simply fill out the form below, and a Juantraveller representative
-                                        will contact you.
+                            @*<div id="logo-mini" class="row mb-3 align-items-center">
+                                    <img src="@Url.Content("~/Content/Image/jt-logo-white.png")" class="img-responsive" />
+                                </div>*@
+                            <div class="row">
+                                <div id="inquiry-text" class="col-md-12 text-center login-txt">
+                                    <h3 class="text-center">
+                                        Don't have an account? Create One.
+                                    </h3>
+                                    <div class="row text-center">
+                                        <div class="col-md-10" style="margin:0 auto;">
+                                            <span>
+                                                Creating an account with Juantraveler is absolutely FREE! Sign up now to
+                                                enjoy exclusive benefits.
+                                            </span>
+                                        </div>
+                                        <div class="col-md-8 pt-5" style="margin:0 auto;">
+                                            <button type="button" id="a-btnSignUp" class="btn btn-transparent btn-block">Sign Up</button>
+                                        </div>
                                     </div>
                                 </div>
 
                             </div>
-                            <div class="row mb-4 text-center" style="bottom:0; padding-top: 250px;">
-                                <div class="col-md-8" style="margin:0 auto;">
-                                    <button type="button" id="a-btnSignUp" class="btn btn-transparent btn-block">Sign Up</button>
-                                </div>
 
-                            </div>
+                            @*<div class="row mb-4 text-center" style="bottom:0;">
+                                    <div class="col-md-8" style="margin:0 auto;">
+                                        <button type="button" id="a-btnSignUp" class="btn btn-transparent btn-block">Sign Up</button>
+                                    </div>
+                                </div>*@
                         </div>
                         <div class="col-md-7 p-5">
                             <br />
                             <div class="row  text-center">
                                 <div class="col-md-12">
-                                    <span class="m-title">Sign in to Juantraveller</span>
+                                    <h4 class="m-title">Wecome to Juantraveler Tours!</h4>
                                 </div>
                                 <div class="col-md-12">
-                                    <span class="sub-title">Sign in to Juantraveller let us be part of your journey!</span>
+                                    @*<span class="sub-title">Sign in to Juantraveller let us be part of your journey!</span>*@
                                 </div>
                             </div>
                             <br /><br />
@@ -218,9 +310,6 @@
             </div>
         </div>
     </div>
-
-
-
 
     <div class="modal fade" id="modalForgotPassword">
         <div class="modal-dialog modal-lg">
@@ -379,9 +468,9 @@
                                 </div>
 
                             </div>
-                            <div class="row mb-4 text-center" style="bottom:0; padding-top:250px">
+                            <div class="row mb-4 text-center" style="bottom:0;">
                                 <div class="col-md-8" style="margin:0 auto;">
-                                    <button type="button" id="a-btnSignIn" class="btn btn-transparent btn-block">Sign In</button>
+                                    <button type="button" id="a-btnSignIn" class="btn btn-transparent btn-block" style="margin-top:260px;">Sign In</button>
                                 </div>
 
                             </div>
@@ -395,6 +484,65 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="termsAndCondition" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header bottom-borderless">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="icon-modal-close small-text"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="container2">
+
+                            <div class="row pt-2">
+                                <div class="col-md-12 text-center">
+                                    <h5><b>Juantraveler Tours</b></h5>
+                                    <h5><b>Terms & Conditions</b></h5>
+                                </div>
+                            </div>
+                            <div class="row pt-2">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                                Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                                                natoque penatibus et magnis dis parturient montes, nascetur
+                                                ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                                                eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
+                                                pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                                                In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                                                Nullam dictum felis eu pede
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <button id="btnLogincontinue" class="btn btn-orange btn-block">I Agree</button>
+
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn btn-secondary btn-block" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+                                    @*<div class="form-group pr-5 pl-5">
+                                            <button class="form-control btn btn-block btn-orange" id="btnValidate">Validate</button>
+                                            <button class="form-control btn btn-block btn-white-borderOrange" data-dismiss="modal">Cancel</button>
+                                        </div>*@
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <footer class="page-footer font-small unique-color-dark  bg-dark-blue-package">
         <div class="row">
@@ -411,22 +559,24 @@
                 <div class="col-md-4  mb-4">
 
                     <!-- Content -->
-                    <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+                    <a href="@Url.Action("Index", "Package")" class="navbar-brand">
 
-                        <img src="@Url.Content("~/Content/Image/logo2.png")" height="65" alt="CoolBrand">
+                        <img src="@Url.Content("~/Content/Image/JTtrourslogo.jpg")" height="65" alt="CoolBrand">
 
                     </a>
 
                     <p>
-                        Juantraveller is an all-in-one online booking platform for all your travel needs - accommodations,
-                        activities, transportation. Easily plan and customize your travel itinerary online and uncover wonderful
-                        places to visit, and amazing activities to do in the Philippines.
+                        Juan traveler is an all-in-one online booking platform for all your
+                        travel needs - accomodations, activities, transportation. Easily
+                        plan and customize your tour packages online and uncover
+                        wonderful places to visit and amazing activities to do in the
+                        Philippines.
                     </p>
 
                 </div>
                 <!-- Grid column -->
                 <!-- Grid column -->
-                <div class="col-md-4  mx-auto mb-4 pt-4">
+                <div class="col-md-4  mx-auto mb-4">
 
                     <!-- Links -->
                     <h6 class="text-capitalize  footer-title-package">About Juantraveller</h6>
@@ -434,21 +584,21 @@
                     <div class="row">
                         <div class="col-md-5 mb-md-0 mb-3">
                             <p>
-                                <a class="hover-orange text-white" href="@Url.Action("HelpCenter", "Site", new { keysource = "started" })">About us</a>
+                                <a class="text-white" href="@Url.Action("About", "Package", new { keysource = "started" })">About us</a>
                             </p>
                             <p>
-                                <a class="hover-orange text-white" href="@Url.Action("ContactUs", "Site")">Contact us</a>
+                                <a class="text-white" href="@Url.Action("ContactUs", "Package")">Contact us</a>
                             </p>
-                            <p>
-                                <a class="hover-orange text-white" href="@Url.Action("HelpCenter", "Site", new { keysource = "userGuide" })">Help Center</a>
-                            </p>
+                            @*<p>
+                                    <a class="text-white" href="@Url.Action("HelpCenter", "Site", new { keysource = "userGuide" })">Help Center</a>
+                                </p>*@
                         </div>
                         <div class="col-md-6 mb-md-0 mb-3">
                             <p>
-                                <a class="hover-orange text-white" href="@Url.Action("HelpCenter", "Site", new { keysource = "terms" })">Terms and Condition</a>
+                                <a class="text-white" href="@Url.Action("Terms", "Package", new { keysource = "terms" })">Terms and Condition</a>
                             </p>
                             <p>
-                                <a class="hover-orange text-white" href="@Url.Action("HelpCenter", "Site", new { keysource = "privacy" })">Privacy Policy</a>
+                                <a class="text-white" href="@Url.Action("FAQ", "Package", new { keysource = "privacy" })">Faq</a>
                             </p>
 
                         </div>
@@ -477,7 +627,7 @@
 
                     </div>*@
 
-                <div class="col-md-3 mx-auto mb-4 pt-4">
+                <div class="col-md-3 mx-auto mb-4">
                     @*<div class="row py-4 d-flex align-items-center">*@
 
                     <!-- Grid column -->
@@ -514,22 +664,6 @@
             <!-- Grid row -->
 
         </div>
-        <div class="container">
-            <div class="row py-4 d-flex align-items-center">
-                <div class="col-md-4  mb-4">
-                    <h6 class="text-capitalize  footer-title-package">Available Payments</h6>
-                    <!-- Content -->
-
-
-                    <img src="@Url.Content("~/Content/Image/visaCard.jpg")" height="65" alt="CoolBrand">
-
-
-
-
-
-                </div>
-            </div>
-        </div>
         <!-- Footer Links -->
         <!-- Copyright -->
         <div class="footer-copyright">
@@ -537,6 +671,11 @@
 
                 <div class="row py-4 d-flex align-items-center">
                     <div class="col-md-4  mb-4">
+                        <h6 class="text-capitalize  footer-title-package">Available Payments</h6>
+                        <!-- Content -->
+
+
+                        <img src="@Url.Content("~/Content/Image/visaCard.jpg")" height="65" alt="CoolBrand">
 
 
 
@@ -574,39 +713,52 @@
             </div>
 
         </div>
-
         <!-- Copyright -->
 
     </footer>
 
+
+
     <script type="text/javascript">var baseUrl = "@Url.Content("~/")"</script>
-    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    @*<script src="~/Scripts/jquery-3.4.1.js"></script>*@
+    <script src="@Url.Content("~/Scripts/jquery-3.4.1.js")"></script>
+    @*<script src="@Url.Content("~/Content/js/jquery.min.js")"></script>*@
     <script src="~/Content/js/popper.min.js"></script>
     <script src="~/Content/js/bootstrap.js"></script>
+    <script src="~/Content/js/bootstrap4-toggle.js"></script>
+
+
+    @*<script src="@Url.Content("~/Content/js/bootstrap.bundle.min.js")"></script>*@
+
     <script src="~/Content/js/sweetalert2.min.js"></script>
     <script src="~/Content/js/jquery.validate.js"></script>
     <script src="~/Content/js/dropzone.min.js"></script>
-    <script src="~/Content/js/bootstrap4-toggle.js"></script>
-    <script src="~/Content/js/jt-global.js"></script>
+
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
     <script src="@Url.Content("~/Content/js/moment.js")"></script>
+    <script src="@Url.Content("~/Content/js/cityMunicipality.js")"></script>
     <script src="@Url.Content("~/Content/js/accounting.js")"></script>
     <script src="@Url.Content("~/Content/js/jquery.blockUI.js")"></script>
     <script src="@Url.Content("~/Content/js/daterangepicker.js")"></script>
-    <script src="@Url.Content("~/Content/js/bootstrap.min.js")"></script>
-    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script src="@Url.Content("~/Content/js/jt-global.js")"></script>
+    <script src="@Url.Content("~/Content/js/galleryslide.js")"></script>
+    <script src="@Url.Content("~/Content/js/bootstrap-input-spinner.js")"></script>
+    <script src="@Url.Content("~/Content/slick/slick.min.js")"></script>
+    <script src="@Url.Content("~/Content/slick/slick.js")"></script>
     @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>*@
     @*@Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")*@
     @RenderSection("scripts", required: false)
     <script type="text/javascript">
         var UserSignUp = '@Url.Action("SignUp", "User")';
-        var LogInGuest = '@Url.Action("GuestLogIn", "User")';
         var UserSignUpSuccess = '@Url.Action("SignUp", "Site")';
         var Juantraveller = '@Url.Action("Index", "Home")';
         var Login = '@Url.Action("Login", "User")';
         var ForgotPassword = '@Url.Action("ForgotPassword", "User")';
         var Home = '@Url.Action("Index", "Home")';
-         var OriginList = '@Url.Action("OriginList", "Transport")';
+        var AddEmailSubsribe = '@Url.Action("AddEmailSubscribe", "Package")';
+        var AddFavorites = '@Url.Action("AddFavorites", "Package")';
+        var GetActivePackageListSearch = '@Url.Action("GetActivePackageListSearch", "Package")';
     </script>
 </body>
 </html>
