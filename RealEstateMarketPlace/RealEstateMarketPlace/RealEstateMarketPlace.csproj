@@ -195,7 +195,7 @@
     <Content Include="Content\css\media.css" />
     <Content Include="Content\css\merchant-signup.css" />
     <Content Include="Content\css\one-page-wonder.css" />
-    <Content Include="Content\css\packageLayout.css" />
+    <Content Include="Content\css\realEstate.css" />
     <Content Include="Content\css\package\indexPackage.css" />
     <Content Include="Content\css\pgwslider.css" />
     <Content Include="Content\css\profile.css" />

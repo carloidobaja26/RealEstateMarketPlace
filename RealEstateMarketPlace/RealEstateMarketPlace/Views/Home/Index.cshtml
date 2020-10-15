@@ -1,5 +1,114 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@section style {
+    <link href="@Url.Content("~/Content/css/realEstate/index.css")" rel="stylesheet" />
+}
+@section scripts {
 
-<h2>Home Page</h2>
+    <script src="@Url.Content("~/Content/js/Home/index.js")"></script>
+}
+
+<div class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 pt-5 pb-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="text-center text-dark"> Search properties for sale and to rent</h4>
+                    </div>
+                    <div class="col-md-4 col-12">
+
+                    </div>
+
+                    <div class="col-md-4 col-12">
+                        <div class="row">
+                            <div class="col-md-6 pb-2">
+                                <button type="button" class="btn btn-primary btn-block" id="btnRentProperty">
+                                    Rent
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-primary btn-block pt-2">
+                                    Sale
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12">
+
+                    </div>
+                </div>
+                <div class="row pt-5 pb-3">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="modalRent" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="col-md-6">
+                    <h4 class="modal-title text-dark">Select Property</h4>
+                </div>
+                <div class="col-md-6 justify-content-end pt-3">
+                    <button type="button" class="close font-12 text-dark" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="text-dark">Location</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <input type="text" name="name" value="" class="btn-block searchRent" />
+                                        </div>
+                                        <div class="col-md-4 pt-1">
+                                            <button class="btn-block btn btn-primary">Find</button>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-2">
+                                        <div class="col-md-3">
+                                            <ul class="fe6db599" name="Category picker"><div><li class="_05b994c0 e7e540d2">Residential</li><li class="_05b994c0">Commercial</li></div><div class="_97ab0b50"><li class="_31a8085a">Apartment</li><li class="_31a8085a">Townhouse</li><li class="_31a8085a">Villa Compound</li><li class="_31a8085a">Residential Plot</li><li class="_31a8085a">Residential Building</li></div><div class="_97ab0b50"><li class="_31a8085a">Villa</li><li class="_31a8085a">Penthouse</li><li class="_31a8085a">Hotel Apartment</li><li class="_31a8085a">Residential Floor</li></div></ul>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <p>test</p>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <p>test</p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <p>test</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                @*<div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var DestinationList = '@Url.Action("GetDestinations", "Site")';
+    var HotelCityList = '@Url.Action("HotelCityList", "Hotel")';
+
+</script>

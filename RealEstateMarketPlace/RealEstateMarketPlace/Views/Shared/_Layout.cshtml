@@ -18,7 +18,7 @@
     <link href="@Url.Content("~/Content/css/daterangepicker.css")" rel="stylesheet" />
 
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-    <link href="@Url.Content("~/Content/css/packageLayout.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/css/realEstate.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/css/package/indexPackage.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/slick/slick-theme.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/slick/slick.css")" rel="stylesheet" />
@@ -27,22 +27,14 @@
 </head>
 <body id="body-div">
 
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark-blue-package">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-beige">
         <div class="container">
 
 
             <a href="@Url.Action("Index", "Package")" class="navbar-brand">
                 <img src="@Url.Content("~/Content/Image/JTtrourslogo.jpg")" height="65" alt="CoolBrand">
             </a>
-            <div class="input-group md-form form-sm form-1 pl-0 search-package">
-                <div class="input-group-prepend">
-                    <span class="input-group-text bc-blue-txt" id="basic-text1">
-                        <i class="fas fa-search text-white"
-                           aria-hidden="true"></i>
-                    </span>
-                </div>
-                <input class="form-control my-0 py-1 bc-blue-txt search-package" type="text" placeholder="Search" aria-label="Search" id="searchPackage">
-            </div>
+
             <button type="button" class="navbar-toggler white-text" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,13 +42,13 @@
             <div class="collapse navbar-collapse text-white" id="navbarCollapse">
                 <ul class="navbar-nav navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="@Url.Action("About", "Package")" class="nav-item nav-link text-white">About</a>
+                        <a href="@Url.Action("About", "Package")" class="nav-item nav-link text-dark">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="@Url.Action("Faq", "Package")" class="nav-item nav-link text-white">FAQs</a>
+                        <a href="@Url.Action("Faq", "Package")" class="nav-item nav-link text-dark">FAQs</a>
                     </li>
                     <li class="nav-item">
-                        <a href="@Url.Action("ContactUs", "Package")" class="nav-item nav-link text-white">Contact Us</a>
+                        <a href="@Url.Action("ContactUs", "Package")" class="nav-item nav-link text-dark">Contact Us</a>
                     </li>
 
                     @{
@@ -64,7 +56,7 @@
                         if (Session["UserID"] == null)
                         {
                             <li class="nav-item">
-                                <a href="#" data-toggle="modal" data-target="#modalLogin" class="nav-item nav-link text-white"><i class="fas fa-user-circle"></i> Log In</a>
+                                <a href="#" data-toggle="modal" data-target="#modalLogin" class="nav-item nav-link text-dark"><i class="fas fa-user-circle"></i> Log In</a>
                             </li>
                             <li class="nav-item ">
                                 <a href="@Url.Action("SellMyDeals", "Package")" class="btn btn-orange">Sell My Deals</a>
@@ -135,26 +127,20 @@
     <div class="grey darken-1 fixed-top-2  no-margin  pb-3 pt-4 breadcrumb">
         <div class="container">
             <div class="row font-14">
-                <div class="col-md-1 col-1 text-sm-center">
+                <div class="col-md-2 col-2 text-sm-center">
                     <a class="text-dark" href="@Url.Action("ShowAll", "Package")"><i class="fas fa-globe mr-2"></i> Show All</a>
                 </div>
-                <div class="col-md-2 col-2 text-sm-center">
+                <div class="col-md-3 col-3 text-sm-center">
                     <a class="text-dark" href="@Url.Action("TodaysDeal", "Package")"><i class="fas fa-clipboard-check mr-2"></i> Todays Deal</a>
                 </div>
                 <div class="col-md-2 col-2 text-sm-center">
                     <a class="text-dark" href="@Url.Action("PopularDeal", "Package")"><i class="far fa-star mr-2"></i> Popular Deals</a>
                 </div>
                 <div class="col-md-2 col-2 text-sm-center">
-                    <a class="text-dark" href="@Url.Action("Restaurant", "Package")"><i class="	fas fa-utensils"></i> Restaurant</a>
+                    <a class="text-dark" href="@Url.Action("Restaurant", "Package")"><i class="	fas fa-utensils"></i> Residentials</a>
                 </div>
-                <div class="col-md-2 col-2 text-sm-center">
-                    <a class="text-dark" href="@Url.Action("Activities", "Package")"><i class="fas fa-swimmer mr-2"></i> Activities</a>
-                </div>
-                <div class="col-md-2 col-2 text-sm-center">
-                    <a class="text-dark" href="@Url.Action("HealthAndBeauty", "Package")"><i class="fas fa-spa mr-2"></i> Health & Beauty</a>
-                </div>
-                <div class="col-md-1 col-1 text-sm-center">
-                    <a class="text-dark" href="@Url.Action("Tours", "Package")"><i class="fas fa-route mr-2"></i> Tour</a>
+                <div class="col-md-3 col-3 text-sm-center">
+                    <a class="text-dark" href="@Url.Action("Activities", "Package")"><i class="fas fa-swimmer mr-2"></i> Commercials</a>
                 </div>
             </div>
         </div>
@@ -544,7 +530,7 @@
     </div>
 
 
-    <footer class="page-footer font-small unique-color-dark  bg-dark-blue-package">
+    <footer class="page-footer font-small unique-color-dark  bg-beige">
         <div class="row">
 
         </div>
@@ -565,7 +551,7 @@
 
                     </a>
 
-                    <p>
+                    <p class="text-dark">
                         Juan traveler is an all-in-one online booking platform for all your
                         travel needs - accomodations, activities, transportation. Easily
                         plan and customize your tour packages online and uncover
@@ -579,15 +565,15 @@
                 <div class="col-md-4  mx-auto mb-4">
 
                     <!-- Links -->
-                    <h6 class="text-capitalize  footer-title-package">About Juantraveller</h6>
+                    <h6 class="text-capitalize  footer-title-package text-dark">About Juantraveller</h6>
                     <div class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"></div>
                     <div class="row">
                         <div class="col-md-5 mb-md-0 mb-3">
                             <p>
-                                <a class="text-white" href="@Url.Action("About", "Package", new { keysource = "started" })">About us</a>
+                                <a class="text-dark" href="@Url.Action("About", "Package", new { keysource = "started" })">About us</a>
                             </p>
                             <p>
-                                <a class="text-white" href="@Url.Action("ContactUs", "Package")">Contact us</a>
+                                <a class="text-dark" href="@Url.Action("ContactUs", "Package")">Contact us</a>
                             </p>
                             @*<p>
                                     <a class="text-white" href="@Url.Action("HelpCenter", "Site", new { keysource = "userGuide" })">Help Center</a>
@@ -595,10 +581,10 @@
                         </div>
                         <div class="col-md-6 mb-md-0 mb-3">
                             <p>
-                                <a class="text-white" href="@Url.Action("Terms", "Package", new { keysource = "terms" })">Terms and Condition</a>
+                                <a class="text-dark" href="@Url.Action("Terms", "Package", new { keysource = "terms" })">Terms and Condition</a>
                             </p>
                             <p>
-                                <a class="text-white" href="@Url.Action("FAQ", "Package", new { keysource = "privacy" })">Faq</a>
+                                <a class="text-dark" href="@Url.Action("FAQ", "Package", new { keysource = "privacy" })">Faq</a>
                             </p>
 
                         </div>
@@ -637,19 +623,17 @@
                     <!-- Grid column -->
                     <!-- Grid column -->
                     <div id="socialIcon" class="col-md-12 col-lg-7 text-black text-center text-md-right">
-                        <p class="text-white">Follow Us</p>
+                        <p class="text-dark">Follow Us</p>
                         <!-- Facebook -->
-                        <a class="fb-ic bc-blue-txt">
+                        <a class="fb-ic bg-beige">
                             <i class="fab fa-facebook-f mr-2"></i>
                         </a>
                         <!-- Twitter mr-4-->
-                        <a class="tw-ic bc-blue-txt">
+                        <a class="tw-ic bg-beige">
                             <i class="fab fa-twitter  mr-2"> </i>
                         </a>
-
-
                         <!--Instagram-->
-                        <a class="ins-ic bc-blue-txt">
+                        <a class="ins-ic bg-beige">
                             <i class="fab fa-instagram "> </i>
                         </a>
 
@@ -671,15 +655,8 @@
 
                 <div class="row py-4 d-flex align-items-center">
                     <div class="col-md-4  mb-4">
-                        <h6 class="text-capitalize  footer-title-package">Available Payments</h6>
-                        <!-- Content -->
-
-
-                        <img src="@Url.Content("~/Content/Image/visaCard.jpg")" height="65" alt="CoolBrand">
-
-
-
-
+                        @*<h6 class="text-capitalize  footer-title-package text-dark">Available Payments</h6>
+                        <img src="@Url.Content("~/Content/Image/visaCard.jpg")" height="65" alt="CoolBrand">*@
 
                     </div>
                     <!-- Grid column -->

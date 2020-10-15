@@ -7,6 +7,9 @@
     }
 }
 
+.bg-beige {
+    background-color: #F5F5DC;
+}
 .package-heart {
     color: grey;
     font-size: 16px;
