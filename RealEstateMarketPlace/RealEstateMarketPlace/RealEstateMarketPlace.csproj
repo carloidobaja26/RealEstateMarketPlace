@@ -199,6 +199,7 @@
     <Content Include="Content\css\package\indexPackage.css" />
     <Content Include="Content\css\pgwslider.css" />
     <Content Include="Content\css\profile.css" />
+    <Content Include="Content\css\realEstate\index.css" />
     <Content Include="Content\css\seatplan\brands.min.css" />
     <Content Include="Content\css\seatplan\classic.min.css" />
     <Content Include="Content\css\seatplan\fontawesome.min.css" />
@@ -1848,6 +1849,7 @@
     <Content Include="Content\js\dropdown.js" />
     <Content Include="Content\js\dropzone.min.js" />
     <Content Include="Content\js\galleryslide.js" />
+    <Content Include="Content\js\Home\index.js" />
     <Content Include="Content\js\Hotel_details_javascript.txt" />
     <Content Include="Content\js\index.js" />
     <Content Include="Content\js\iziModal.min.js" />

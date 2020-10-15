@@ -82,7 +82,7 @@ function addEmailSubsribe() {
 
 $(document).ready(function () {
 
-    OriginListing();
+    //OriginListing();
     $("#btnSubscribe").click(function () {
         addEmailSubsribe();
     });
