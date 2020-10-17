@@ -3,7 +3,6 @@
     ViewBag.Title = "Index";
 }
 @section style {
-    <link href="@Url.Content("~/Content/css/Map.css")" rel="stylesheet" />
     @*<link href="@Url.Content("~/Content/slick/slick.css")" rel="stylesheet" />
         <link href="@Url.Content("~/Content/slick/slick-theme.css")" rel="stylesheet" />*@
     <link href="@Url.Content("~/Content/css/pgwslider.css")" rel="stylesheet" />
@@ -11,11 +10,10 @@
 }
 @section scripts {
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0J-ZXK6svqUyDQn5fucEKI-EnKYn_jaE&sensor=false&.js"></script>
     @*<script src="@Url.Content("~/Content/slick/slick.min.js")"></script>*@
     <script src="@Url.Content("~/Content/js/pgwslider.js")"></script>
 
-    <script src="@Url.Content("~/Content/js/jt-hoteldetails.js")"></script>
+    <script src="@Url.Content("~/Content/js/Property/index.js")"></script>
 
     @*<script src="@Url.Content("~/Content/js/slideNav.js")"></script>*@
 
@@ -37,7 +35,7 @@
                                     </div>
 
                                     <div class="col-md-12 p-2 ">
-                                        <button data-toggle="modal" data-target="#modalView1" class="font-12 btn btn-transparent btn-block">See room details</button>
+                                        <button data-toggle="modal" data-target="#modalView1" class="font-12 btn btn-transparent btn-block">See property details</button>
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +52,7 @@
                                     </div>
                                     <div class="col-md-3 s12">
                                         <div id="hotel-text" class="mb-2">
-                                            <div id="hotel-price" class="hotel-name">Php 2,400 <span class="text-small">/night</span></div>
+                                            <div id="hotel-price" class="hotel-name">Php 2,400 <span class="text-small">/month</span></div>
 
                                         </div>
                                         <div id="room-offer" class="hotel-address mb-3">
@@ -65,20 +63,20 @@
                                         </div>
                                         <div id="hotel-view" class="hotel-view pr-3">
 
-                                            <div class="row mb-2">
-                                                <div class="col-md-6 s12 font-14">
-                                                    Rooms
-                                                </div>
-                                                <div class="col-md-6 s12">
-                                                    <input class="form-control font-12" type="number" value="1" id="example-number-input">
-                                                </div>
-                                            </div>
+                                            @*<div class="row mb-2">
+                                        <div class="col-md-6 s12 font-14">
+                                            Rooms
+                                        </div>
+                                        <div class="col-md-6 s12">
+                                            <input class="form-control font-12" type="number" value="1" id="example-number-input">
+                                        </div>
+                                    </div>*@
                                             <div class="row">
                                                 <div class="col-md-6 s12">
 
                                                 </div>
                                                 <div class="col-md-12 s12">
-                                                    <a href="#" class="btn btn-orange btn-block font-12"> Book Now</a>
+                                                    <a href="#" class="btn btn-orange btn-block font-12">Reserve Now</a>
                                                 </div>
                                             </div>
 
@@ -103,7 +101,7 @@
                                             </div>
                                             <div class="col-3 text-center px-0">
                                                 <p class="view-info-text text-black">
-                                                    <i class="fa fa-home mr-2 text-black"></i> Bed
+                                                    <i class="fa fa-home mr-2 text-black"></i> 52sq meter
                                                 </p>
                                             </div>
                                             <div class="col-3 text-center px-0">
@@ -118,7 +116,6 @@
                             </div>
 
                         </div>
-
                     </div>
                 </div>
                 <div id="" class="font-12 row ">
@@ -134,7 +131,7 @@
                                     </div>
 
                                     <div class="col-md-12 p-2 ">
-                                        <button data-toggle="modal" data-target="#modalView1" class="font-12 btn btn-transparent btn-block">See room details</button>
+                                        <button data-toggle="modal" data-target="#modalView1" class="font-12 btn btn-transparent btn-block">See property details</button>
                                     </div>
                                 </div>
                             </div>
@@ -151,7 +148,7 @@
                                     </div>
                                     <div class="col-md-3 s12">
                                         <div id="hotel-text" class="mb-2">
-                                            <div id="hotel-price" class="hotel-name">Php 2,400 <span class="text-small">/night</span></div>
+                                            <div id="hotel-price" class="hotel-name">Php 2,400 <span class="text-small">/month</span></div>
 
                                         </div>
                                         <div id="room-offer" class="hotel-address mb-3">
@@ -162,20 +159,20 @@
                                         </div>
                                         <div id="hotel-view" class="hotel-view pr-3">
 
-                                            <div class="row mb-2">
-                                                <div class="col-md-6 s12 font-14">
-                                                    Rooms
-                                                </div>
-                                                <div class="col-md-6 s12">
-                                                    <input class="form-control font-12" type="number" value="1" id="example-number-input">
-                                                </div>
-                                            </div>
+                                            @*<div class="row mb-2">
+                                        <div class="col-md-6 s12 font-14">
+                                            Rooms
+                                        </div>
+                                        <div class="col-md-6 s12">
+                                            <input class="form-control font-12" type="number" value="1" id="example-number-input">
+                                        </div>
+                                    </div>*@
                                             <div class="row">
                                                 <div class="col-md-6 s12">
 
                                                 </div>
                                                 <div class="col-md-12 s12">
-                                                    <a href="#" class="btn btn-orange btn-block font-12"> Book Now</a>
+                                                    <a href="#" class="btn btn-orange btn-block font-12">Reserve Now</a>
                                                 </div>
                                             </div>
 
@@ -200,7 +197,7 @@
                                             </div>
                                             <div class="col-3 text-center px-0">
                                                 <p class="view-info-text text-black">
-                                                    <i class="fa fa-home mr-2 text-black"></i> Bed
+                                                    <i class="fa fa-home mr-2 text-black"></i> 52sq meter
                                                 </p>
                                             </div>
                                             <div class="col-3 text-center px-0">
@@ -215,7 +212,6 @@
                             </div>
 
                         </div>
-
                     </div>
                 </div>
                 <div id="" class="font-12 row ">
@@ -231,7 +227,7 @@
                                     </div>
 
                                     <div class="col-md-12 p-2 ">
-                                        <button data-toggle="modal" data-target="#modalView1" class="font-12 btn btn-transparent btn-block">See room details</button>
+                                        <button data-toggle="modal" data-target="#modalView1" class="font-12 btn btn-transparent btn-block">See property details</button>
                                     </div>
                                 </div>
                             </div>
@@ -248,7 +244,7 @@
                                     </div>
                                     <div class="col-md-3 s12">
                                         <div id="hotel-text" class="mb-2">
-                                            <div id="hotel-price" class="hotel-name">Php 2,400 <span class="text-small">/night</span></div>
+                                            <div id="hotel-price" class="hotel-name">Php 2,400 <span class="text-small">/month</span></div>
 
                                         </div>
                                         <div id="room-offer" class="hotel-address mb-3">
@@ -259,20 +255,20 @@
                                         </div>
                                         <div id="hotel-view" class="hotel-view pr-3">
 
-                                            <div class="row mb-2">
-                                                <div class="col-md-6 s12 font-14">
-                                                    Rooms
-                                                </div>
-                                                <div class="col-md-6 s12">
-                                                    <input class="form-control font-12" type="number" value="1" id="example-number-input">
-                                                </div>
-                                            </div>
+                                            @*<div class="row mb-2">
+                                        <div class="col-md-6 s12 font-14">
+                                            Rooms
+                                        </div>
+                                        <div class="col-md-6 s12">
+                                            <input class="form-control font-12" type="number" value="1" id="example-number-input">
+                                        </div>
+                                    </div>*@
                                             <div class="row">
                                                 <div class="col-md-6 s12">
 
                                                 </div>
                                                 <div class="col-md-12 s12">
-                                                    <a href="#" class="btn btn-orange btn-block font-12"> Book Now</a>
+                                                    <a href="#" class="btn btn-orange btn-block font-12">Reserve Now</a>
                                                 </div>
                                             </div>
 
@@ -297,7 +293,7 @@
                                             </div>
                                             <div class="col-3 text-center px-0">
                                                 <p class="view-info-text text-black">
-                                                    <i class="fa fa-home mr-2 text-black"></i> Bed
+                                                    <i class="fa fa-home mr-2 text-black"></i> 52sq meter
                                                 </p>
                                             </div>
                                             <div class="col-3 text-center px-0">
@@ -312,7 +308,6 @@
                             </div>
 
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -323,16 +318,13 @@
 
 
 <div class="modal fade" id="modalView1">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-lg" style="max-width:1400px !important;">
         <div class="modal-content bg-darker">
             <div class="modal-body pt-0 pb-0">
                 <div id="roomInfoModal" class="row">
-                    <div class="col-md-7 p-2" style="min-height:500px; max-height:500px;   background-color: #222322;">
-
+                    <div class="col-md-5 p-2" style="min-height:695px; max-height:695px;   background-color: #222322;">
                         <div id="Room-Image-Container">
                             <ul class="pgwSlider">
-                                <li><img src="@Url.Content("~/Content/image/1.jpg")" class="img-responsive" alt="Paris, France" data-description="Desc"></li>
-                                <li><img src="@Url.Content("~/Content/image/2.jpg")" class="img-responsive" alt="Montréal, QC, Canada" data-large-src="@Url.Content("~/Content/image/2.jpg")"></li>
                                 <li>
                                     <img src="@Url.Content("~/Content/image/3.jpg")" class="img-responsive">
                                     <span>Shanghai, China</span>
@@ -349,49 +341,44 @@
                                     <img src="@Url.Content("~/Content/image/4.jpg")" class="img-responsive">
                                     <span>Shanghai, China</span>
                                 </li>
-
-
                             </ul>
 
                         </div>
 
 
                     </div>
-                    <div class="col-md-5 p-3 bg-white" style="max-height:500px; overflow-x: auto;">
+                    <div class="col-md-7 p-3 bg-white" style="max-height:695px; overflow-x: auto;">
                         <div class="row">
                             <div class="col-md-12  mb-3">
-                                <span class="sub-title" id="RoomTypeName">Deluxe Room</span>
+                                <span class="sub-title" id="RoomTypeName">Property Name</span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12  mb-3" id="RoomTypeDesc">
                                 A demo of usin
                             </div>
-                        </div>
-                        <hr />
-                        <div class="row">
                             <div class="col-md-12  mb-3">
-                                <span class="sub-title">Room Features</span>
+                                <span class="sub-title">Property Features</span>
                             </div>
                             <div class="col-md-12 col-12 mb-3">
                                 <div id="allFeatures">
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-3">
                                             <p class="view-info-text text-black">
                                                 <i class="fa fa-bed mr-2 text-green"></i> <span id="bed"></span>
                                             </p>
                                         </div>
-                                        <div class="col-6 ">
+                                        <div class="col-3">
                                             <p class="view-info-text text-black">
                                                 <i class="fa fa-shower mr-2 text-green"></i> <span id="bath"></span>
                                             </p>
                                         </div>
-                                        <div class="col-6">
+                                        <div class="col-3">
                                             <p class="view-info-text text-black">
                                                 <i class="fa fa-home mr-2 text-green"></i> <span id="size"></span>
                                             </p>
                                         </div>
-                                        <div class="col-6 ">
+                                        <div class="col-3">
                                             <p class="view-info-text text-black">
                                                 <i class="fa fa-user-friends mr-2 text-green"></i> <span id="guest"></span>
                                             </p>
@@ -401,15 +388,11 @@
                                 </div>
                             </div>
                         </div>
-
-
                         <hr />
                         <div class="row">
                             <div class="col-md-12  mb-3">
-                                <span class="sub-title ">Room Amenities</span>
-
+                                <span class="sub-title ">Property Amenities</span>
                             </div>
-
                             <div class="col-md-12 col-12 mb-3">
                                 <div id="allAmenities">
                                     <div class="row">
@@ -443,7 +426,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
