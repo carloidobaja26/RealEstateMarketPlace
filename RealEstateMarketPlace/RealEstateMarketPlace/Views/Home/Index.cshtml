@@ -6,8 +6,8 @@
     <link href="@Url.Content("~/Content/slick/slick-theme.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/css/iziModal.min.css")" rel="stylesheet" />
     <link href="@Url.Content("~/Content/css/realEstate/index.css")" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css")" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css")" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css" )" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" )" rel="stylesheet" />
 }
 @section scripts {
     <script src="@Url.Content("~/Content/slick/slick.min.js")"></script>
@@ -38,7 +38,7 @@
                                 </button>
                             </div>
                             <div class="col-md-6">
-                                <button class="btn btn-primary btn-block pt-2">
+                                <button class="btn btn-primary btn-block pt-2" id="btnSaleProperty">
                                     Sale
                                 </button>
                             </div>
@@ -57,13 +57,13 @@
     </div>
 </div>
 
-<div id="modalRent" class="modal fade" role="dialog">
+<div id="modalSale" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <div class="col-md-6">
-                    <h4 class="modal-title text-dark">Select Property</h4>
+                    <h4 class="modal-title text-dark">Buy A Property</h4>
                 </div>
                 <div class="col-md-6 justify-content-end pt-3">
                     <button type="button" class="close font-12 text-dark" data-dismiss="modal">Close</button>
@@ -85,7 +85,143 @@
                                             <input type="text" name="name" value="" class="btn-block searchRent" />
                                         </div>
                                         <div class="col-md-4 pt-1">
-                                            <button class="btn-block btn btn-primary">Find</button>
+                                            <button class="btn-block btn btn-primary" id="btnPropertyBuyFind">Find</button>
+                                        </div>
+                                    </div>
+                                    <div class="row pt-2">
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-md-12 text-center">
+                                                    <label class="text-dark">Property Type</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="dropdown">
+                                                        <button class="btn dropdown-toggle text-left" id="btnGuest" type="button" data-toggle="dropdown">
+                                                            Property Type
+                                                        </button>
+                                                        <div class="">
+                                                            <div class=" dropdown-menu modal-css p-2" id="ulid" role="menu" aria-labelledby="menu1">
+                                                                <div class="row">
+                                                                    <div class="col-md-12 text-center">
+                                                                        <label>RESIDENTIAL</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row text-dark">
+                                                                    <div class="col-md-6 pt-1 pb-1">
+                                                                        <button class="btn btn-dropdownMenu">Apartment</button>
+                                                                    </div>
+                                                                    <div class="col-md-6 pt-1 pb-1">
+                                                                        <button class="btn btn-dropdownMenu btn-block">Apartment</button>
+                                                                    </div>
+                                                                    <div class="col-md-6 pt-1 pb-1">
+                                                                        <button class="btn btn-dropdownMenu">Apartment</button>
+                                                                    </div>
+                                                                    <div class="col-md-6 pt-1 pb-1">
+                                                                        <button class="btn btn-dropdownMenu btn-block">Apartment</button>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12 text-center">
+                                                                        <label>COMMERCIAL</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row text-dark">
+                                                                    <div class="col-md-6 pt-1 pb-1">
+                                                                        <button class="btn btn-dropdownMenu">Apartment</button>
+                                                                    </div>
+                                                                    <div class="col-md-6 pt-1 pb-1">
+                                                                        <button class="btn btn-dropdownMenu btn-block">Apartment</button>
+                                                                    </div>
+                                                                    <div class="col-md-6 pt-1 pb-1">
+                                                                        <button class="btn btn-dropdownMenu">Apartment</button>
+                                                                    </div>
+                                                                    <div class="col-md-6 pt-1 pb-1">
+                                                                        <button class="btn btn-dropdownMenu btn-block">Apartment</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="row">
+                                                <div class="col-md-12 text-center">
+                                                    <label class="text-dark">Price Range</label>
+                                                </div>
+                                                <div class="col-md-12 text-center pt-2">
+                                                    <input id="rentPrice" type="text" data-slider-value="[1, 100]" data-slider-ticks="[1, 20,40,60,80, 100]" data-slider-lock-to-ticks="true" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-md-12 text-center">
+                                                    <label class="text-dark">Beds</label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <select class="form-control font-14">
+                                                            <option value="value">Studio</option>
+                                                            <option value="value">1 Bed</option>
+                                                            <option value="value">2 Bed</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                @*<div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalRent" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="col-md-6">
+                    <h4 class="modal-title text-dark">Rent A Property</h4>
+                </div>
+                <div class="col-md-6 justify-content-end pt-3">
+                    <button type="button" class="close font-12 text-dark" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="text-dark">Location</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <input type="text" name="name" value="" class="btn-block searchRent" />
+                                        </div>
+                                        <div class="col-md-4 pt-1">
+                                            <button class="btn-block btn btn-primary" id="btnProperyRentFind">Find</button>
                                         </div>
                                     </div>
                                     <div class="row pt-2">
@@ -173,7 +309,7 @@
                                                     <label class="text-dark">Price Range</label>
                                                 </div>
                                                 <div class="col-md-12 text-center pt-2">
-                                                    <input id="ex25" type="text" data-slider-value="[1, 100]" data-slider-ticks="[1, 20,40,60,80, 100]" data-slider-lock-to-ticks="true" />
+                                                    <input id="salePrice" type="text" data-slider-value="[1, 100]" data-slider-ticks="[1, 20,40,60,80, 100]" data-slider-lock-to-ticks="true" />
                                                 </div>
                                             </div>
                                         </div>
@@ -211,8 +347,9 @@
     </div>
 </div>
 
+
 <script type="text/javascript">
     var DestinationList = '@Url.Action("GetDestinations", "Site")';
     var HotelCityList = '@Url.Action("HotelCityList", "Hotel")';
-
+    var Property = '@Url.Action("Index", "Property")';
 </script>
