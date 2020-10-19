@@ -1897,6 +1897,8 @@
     <Content Include="Content\js\package\toursPackage.js" />
     <Content Include="Content\js\pgwslider.js" />
     <Content Include="Content\js\popper.min.js" />
+    <Content Include="Content\js\Property.js" />
+    <Content Include="Content\js\Property\index.js" />
     <Content Include="Content\js\qrcode.js" />
     <Content Include="Content\js\script.js" />
     <Content Include="Content\js\script2.js" />
