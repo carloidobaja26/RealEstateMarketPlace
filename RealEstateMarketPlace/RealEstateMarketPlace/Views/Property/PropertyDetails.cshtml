@@ -6,15 +6,15 @@
 @section style {
     @*<link href="@Url.Content("~/Content/slick/slick.css")" rel="stylesheet" />
         <link href="@Url.Content("~/Content/slick/slick-theme.css")" rel="stylesheet" />*@
-    <link href="@Url.Content("~/Content/css/pgwslider.css")" rel="stylesheet" />
-
+    @*<link href="@Url.Content("~/Content/css/pgwslider.css")" rel="stylesheet" />*@
+    <link href="@Url.Content("~/Content/css/Map.css")" rel="stylesheet" />
 }
 @section scripts {
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0J-ZXK6svqUyDQn5fucEKI-EnKYn_jaE&sensor=false&.js"></script>
     @*<script src="@Url.Content("~/Content/slick/slick.min.js")"></script>*@
-    <script src="@Url.Content("~/Content/js/pgwslider.js")"></script>
+    @*<script src="@Url.Content("~/Content/js/pgwslider.js")"></script>*@
 
-    <script src="@Url.Content("~/Content/js/Property/index.js")"></script>
+    <script src="@Url.Content("~/Content/js/Property/propertyDetails.js")"></script>
 
     @*<script src="@Url.Content("~/Content/js/slideNav.js")"></script>*@
 
@@ -22,7 +22,13 @@
 <div class="container">
     <div class="col-md-12">
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-12 pt-3 pb-3">
+                <a href="#"><span class="text-primary ml-2 mr-2">Home</span></a><span>></span><a href="#"><span class="text-primary ml-2 mr-2">SearchApartment</span></a><span>></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
                 <div class="card">
                     <div class="card-body">
                         <div class="img-gallery-active"></div>
@@ -32,11 +38,30 @@
                                     <div class="img-gallery" data-main-src="@Url.Content("~/Content/Image/h8.jpg")">
                                         <a id="ns_1" href="#" class="galleryLink" data-main-src="@Url.Content("~/Content/Image/h8.jpg")"></a>
                                     </div>
+                                </div>
+                                <div>
                                     <div class="img-gallery" data-main-src="@Url.Content("~/Content/image/3.jpg")">
                                         <a id="ns_2" href="#" class="galleryLink" data-main-src="@Url.Content("~/Content/image/3.jpg")"></a>
                                     </div>
+                                </div>
+                                <div>
                                     <div class="img-gallery" data-main-src="@Url.Content("~/Content/Image/h8.jpg")">
-                                        <a id="ns_2" href="#" class="galleryLink" data-main-src="@Url.Content("~/Content/Image/h8.jpg")"></a>
+                                        <a id="ns_1" href="#" class="galleryLink" data-main-src="@Url.Content("~/Content/Image/h8.jpg")"></a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="img-gallery" data-main-src="@Url.Content("~/Content/Image/h8.jpg")">
+                                        <a id="ns_1" href="#" class="galleryLink" data-main-src="@Url.Content("~/Content/Image/h8.jpg")"></a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="img-gallery" data-main-src="@Url.Content("~/Content/Image/h8.jpg")">
+                                        <a id="ns_1" href="#" class="galleryLink" data-main-src="@Url.Content("~/Content/Image/h8.jpg")"></a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="img-gallery" data-main-src="@Url.Content("~/Content/Image/h8.jpg")">
+                                        <a id="ns_1" href="#" class="galleryLink" data-main-src="@Url.Content("~/Content/Image/h8.jpg")"></a>
                                     </div>
                                 </div>
                             </div>
@@ -45,8 +70,269 @@
 
                 </div>
             </div>
-            <div class="col-md-5">
-                <h4>Hello</h4>
+            <div class="col-md-4 text-dark">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="text-dark">Overview</h3>
+                    </div>
+                </div>
+                <div class="row pt-4 pb-3">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Name</label>
+                            </div>
+                            <div class="col-md-8">
+                                <label><b>Apartment Deluxe</b></label>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Type</label>
+                            </div>
+                            <div class="col-md-8">
+                                <label><b>Apartment</b></label>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Price</label>
+                            </div>
+                            <div class="col-md-8">
+                                <label><b>USD 150,000</b></label>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Area</label>
+                            </div>
+                            <div class="col-md-8">
+                                <label><b>1,502 sqft</b></label>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Purpose</label>
+                            </div>
+                            <div class="col-md-8">
+                                <label><b>For Rent</b></label>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Location</label>
+                            </div>
+                            <div class="col-md-8">
+                                <label><b>Mendiola Manila</b></label>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Action</label>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button class="btn btn-block btn-primary" id="btnCallAgent">Call</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button class="btn btn-block btn-primary" id="btnEmailAgent">Email</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pb-4">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="text-dark">Apartment Deluxe</h3>
+                        <h5 class="text-dark">Mendiola Manila</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="nav-tabs bg-white">
+                            <div class="container">
+                                <div class="nav">
+                                    <nav>
+                                        <div class="nav nav-tabs text-black" id="nav-tab" role="tablist">
+                                            <a class="nav-item nav-link" href="#Overview">Hotel Overview</a>
+                                            <a class="nav-item nav-link" href="#Terms">Policies</a>
+                                        </div>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="Overview" class="container">
+
+                            <div class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"></div>
+
+                            <div class="row">
+                                <div class="col-md-7 tab-content">
+                                    <div class="mb-3"><span class="sub-title">Hotel Overview</span></div>
+                                    <div id="hotelDescription" class="">
+
+                                    </div>
+                                    <div class="mb-3"><span class="sub-title">Hotel Facilities</span></div>
+                                    <div class="row ml-2" id="amenities">
+                                        <div class='col-6'><p class='view-info-text  text-green'><i class='fa fa-check-circle mr-2'></i> Free Wifi</p></div>
+                                        <div class='col-6'><p class='view-info-text  text-green'><i class='fa fa-check-circle mr-2'></i> Restaurant </p></div>
+                                        <div class='col-6'><p class='view-info-text  text-green'><i class='fa fa-check-circle mr-2'></i> Parking </p></div>
+                                        <div class='col-6'><p class='view-info-text  text-green'><i class='fa fa-check-circle mr-2'></i> 24 hours Front Desk</p></div>
+                                        <div class='col-6'><p class='view-info-text  text-green'><i class='fa fa-check-circle mr-2'></i> Pool </p></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 tab-content" id="nav-tabContent">
+                                    <div class="form-group br-5 border-orange">
+
+                                        <input type="text" hidden class="form-control" id="gmap" name="gmap" required>
+                                        <div id='map_canvas'></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-7 tab-content" id="nav-tabContent">
+                                    <div class="mb-3"><span class="sub-title">Amenities</span></div>
+                                    <div class="row ml-2" id="amenities">
+                                        <div class='col-6'><p class='view-info-text  text-green'><i class='fa fa-check-circle mr-2'></i> Free Wifi</p></div>
+                                        <div class='col-6'><p class='view-info-text  text-green'><i class='fa fa-check-circle mr-2'></i> Restaurant </p></div>
+                                        <div class='col-6'><p class='view-info-text  text-green'><i class='fa fa-check-circle mr-2'></i> Parking </p></div>
+                                        <div class='col-6'><p class='view-info-text  text-green'><i class='fa fa-check-circle mr-2'></i> 24 hours Front Desk</p></div>
+                                        <div class='col-6'><p class='view-info-text  text-green'><i class='fa fa-check-circle mr-2'></i> Pool </p></div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-5 tab-content" id="nav-tabContent">
+
+                                    <span class="m-title">Nearby</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="Terms" class="container">
+
+                            <div class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"></div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-7 tab-content" id="nav-tabContent">
+                                    <div class="mb-3"><span class="sub-title">Hotel Policies</span></div>
+                                    <ul id="listPolicies" class="text-justify">
+                                        <li class="mb-3">
+                                            Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th centur
+                                        </li>
+                                        <li class="mb-3">
+                                            Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th centur
+                                        </li>
+                                        <li class="mb-3">
+                                            Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th centur
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-5 tab-content" id="nav-tabContent">
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-sm" id="callAgentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Call Agent</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Mobile</label>
+                    </div>
+                    <div class="col-md-8">
+                        <label>+2312123</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Phone</label>
+                    </div>
+                    <div class="col-md-8">
+                        <label>+2312123</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Agent</label>
+                    </div>
+                    <div class="col-md-8">
+                        <label>Juan Dela Cruz</label>
+                    </div>
+                </div>
+            </div>
+            @*<div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>*@
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="emailAgentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Recipient:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Email:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Phone:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea rows="5" class="form-control" id="message-text"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Send message</button>
             </div>
         </div>
     </div>
