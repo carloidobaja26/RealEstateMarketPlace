@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "PropertyDetails";
+}
+
+@section style {
+    @*<link href="@Url.Content("~/Content/slick/slick.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/Content/slick/slick-theme.css")" rel="stylesheet" />*@
+    <link href="@Url.Content("~/Content/css/pgwslider.css")" rel="stylesheet" />
+
+}
+@section scripts {
+
+    @*<script src="@Url.Content("~/Content/slick/slick.min.js")"></script>*@
+    <script src="@Url.Content("~/Content/js/pgwslider.js")"></script>
+
+    <script src="@Url.Content("~/Content/js/Property/index.js")"></script>
+
+    @*<script src="@Url.Content("~/Content/js/slideNav.js")"></script>*@
+
+}
+<div class="container">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="img-gallery-active"></div>
+                        <div class="container-fluid">
+                            <div id="packageimage" class="slider multiple-items">
+                                <div>
+                                    <div class="img-gallery" data-main-src="@Url.Content("~/Content/Image/h8.jpg")">
+                                        <a id="ns_1" href="#" class="galleryLink" data-main-src="@Url.Content("~/Content/Image/h8.jpg")"></a>
+                                    </div>
+                                    <div class="img-gallery" data-main-src="@Url.Content("~/Content/image/3.jpg")">
+                                        <a id="ns_2" href="#" class="galleryLink" data-main-src="@Url.Content("~/Content/image/3.jpg")"></a>
+                                    </div>
+                                    <div class="img-gallery" data-main-src="@Url.Content("~/Content/Image/h8.jpg")">
+                                        <a id="ns_2" href="#" class="galleryLink" data-main-src="@Url.Content("~/Content/Image/h8.jpg")"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-5">
+                <h4>Hello</h4>
+            </div>
+        </div>
+    </div>
+</div>
